@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -13,66 +14,74 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setVisible(true);
-
       if (hideTimer.current) clearTimeout(hideTimer.current);
-
       hideTimer.current = setTimeout(() => {
-        // No ocultar si el menú móvil está abierto
-        if (!mobileOpen) setVisible(false);
+        if (!mobileOpen && !destinosOpen) setVisible(false);
       }, 2000);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // arranca el timer al cargar
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (hideTimer.current) clearTimeout(hideTimer.current);
     };
-  }, [mobileOpen]);
+  }, [mobileOpen, destinosOpen]);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-lusso-charcoal transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-lusso-charcoal border-b border-lusso-blue/40 transition-transform duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-center gap-12 px-6 py-4">
-        {/* Logo */}
-        <Link href="/" className="font-display text-lusso-cream text-lg font-semibold tracking-wide">
-  lusso travel
-</Link>
+        {/* Logotipo */}
+        <Link href="/" aria-label="Ir al inicio">
+          <div className="relative h-24 w-64">
+            <Image
+              src="/images/brand/logotipo2.png"
+              alt="Lusso Travel"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </Link>
 
         {/* Links desktop */}
-        <ul className="hidden md:flex items-center gap-8 text-sm text-lusso-cream">
+        <ul className="hidden md:flex items-center gap-10 text-lg font-semibold text-lusso-cream">
           {/* Dropdown Destinos */}
           <li
             className="relative"
             onMouseEnter={() => setDestinosOpen(true)}
             onMouseLeave={() => setDestinosOpen(false)}
           >
-            <button className="flex items-center gap-1 hover:text-lusso-sage transition-colors">
-              Destinos <ChevronDown size={14} />
+            <button className="flex items-center gap-1 py-2 hover:text-lusso-sage transition-colors">
+              Destinos <ChevronDown size={18} />
             </button>
             {destinosOpen && (
-              <ul className="absolute top-full left-0 mt-2 w-48 rounded-lg bg-lusso-charcoal py-2 shadow-lg">
-                <li>
-                  <Link
-                    href="/destinos/nacionales"
-                    className="block px-4 py-2 hover:text-lusso-sage transition-colors"
-                  >
-                    Nacionales
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/destinos/internacionales"
-                    className="block px-4 py-2 hover:text-lusso-sage transition-colors"
-                  >
-                    Internacionales
-                  </Link>
-                </li>
-              </ul>
+              <div className="absolute top-full left-0 pt-2">
+                <ul className="w-56 rounded-lg bg-lusso-charcoal py-2 shadow-lg ring-1 ring-lusso-cream/10">
+                  <li>
+                    <Link
+                      href="/destinos/nacionales"
+                      className="block px-4 py-2 hover:text-lusso-sage transition-colors"
+                      onClick={() => setDestinosOpen(false)}
+                    >
+                      Nacionales
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/destinos/internacionales"
+                      className="block px-4 py-2 hover:text-lusso-sage transition-colors"
+                      onClick={() => setDestinosOpen(false)}
+                    >
+                      Internacionales
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             )}
           </li>
           <li>
@@ -106,7 +115,6 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-lusso-charcoal px-6 pb-6">
           <ul className="flex flex-col gap-4 text-lusso-cream">
-            {/* En mobile, Destinos es un acordeón con tap, no hover */}
             <li>
               <button
                 className="flex w-full items-center justify-between"

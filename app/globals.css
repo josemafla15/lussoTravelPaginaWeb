@@ -16,3 +16,12 @@ body {
   background: var(--color-lusso-cream);
   color: var(--color-lusso-charcoal);
 }
+
+@keyframes fill-bar {
+  from { height: 0%; }
+  to { height: 100%; }
+}
+
+.animate-fill-bar {
+  animation: fill-bar 6.5s linear forwards;
+}

@@ -1,0 +1,147 @@
+"use client";
+
+import { useRef, useState } from "react";
+import Image from "next/image";
+import { gsap } from "gsap";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { destinos, type Destino } from "@/lib/destinos";
+
+const WHATSAPP = "573000000000";
+
+type Props = {
+  tipo: Destino["tipo"];
+};
+
+export default function DestinoExplorer({ tipo }: Props) {
+  const lista = destinos.filter((d) => d.tipo === tipo);
+  const [index, setIndex] = useState(0);
+  const [animando, setAnimando] = useState(false);
+  const contenedorRef = useRef<HTMLDivElement>(null);
+
+  const destino = lista[index];
+
+  const cambiarDestino = (direccion: 1 | -1) => {
+    if (animando) return; // evita clics dobles durante la animación
+    setAnimando(true);
+
+    const contenido = contenedorRef.current;
+    if (!contenido) return;
+
+    // Fase 1: el contenido actual se desliza y desvanece
+    gsap.to(contenido, {
+      x: direccion === 1 ? -80 : 80,
+      opacity: 0,
+      duration: 0.45,
+      ease: "power2.in",
+      onComplete: () => {
+        // Cambia el destino cuando ya no se ve
+        setIndex((prev) => (prev + direccion + lista.length) % lista.length);
+
+        // Fase 2: el nuevo contenido entra desde el lado contrario
+        gsap.fromTo(
+          contenido,
+          { x: direccion === 1 ? 80 : -80, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.55,
+            ease: "power2.out",
+            onComplete: () => setAnimando(false),
+          }
+        );
+      },
+    });
+  };
+
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-lusso-charcoal">
+      {/* Contenido animable: foto + info + cards */}
+      <div ref={contenedorRef} className="relative min-h-screen">
+        {/* Foto de fondo */}
+        <Image
+          key={destino.id}
+          src={destino.imagen}
+          alt={destino.nombre}
+          fill
+          className="object-cover"
+          priority
+        />
+
+        {/* Gradiente: oscuro a la izquierda, se disuelve a la derecha */}
+        <div className="absolute inset-0 bg-linear-to-r from-lusso-charcoal via-lusso-charcoal/50 to-transparent" />
+
+        {/* Layout del contenido */}
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center gap-12 px-6 py-28 lg:flex-row lg:items-center lg:justify-between">
+          {/* Info del destino */}
+          <div className="max-w-xl">
+            <p className="font-body text-sm uppercase tracking-[0.2em] text-lusso-sage">
+              Descubre
+            </p>
+            <h1 className="mt-2 font-display font-bold text-5xl text-lusso-cream md:text-7xl">
+              {destino.nombre}
+            </h1>
+            <p className="mt-5 text-lusso-cream/80">{destino.descripcion}</p>
+            <a
+              href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
+                `Hola, me interesa viajar a ${destino.nombre}`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-block rounded-full bg-lusso-sage px-8 py-3 text-sm font-semibold text-lusso-charcoal transition-opacity hover:opacity-90"
+            >
+              Cotizar este destino
+            </a>
+          </div>
+
+          {/* Cards de imperdibles */}
+          <div className="flex gap-4 lg:pr-4">
+            {destino.imperdibles.slice(0, 3).map((imperdible) => (
+              <div
+                key={imperdible.nombre}
+                className="group relative h-64 w-40 shrink-0 cursor-pointer overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-105"
+              >
+                {imperdible.imagen ? (
+                  <Image
+                    src={imperdible.imagen}
+                    alt={imperdible.nombre}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  // Fallback sin foto: color de marca
+                  <div className="absolute inset-0 bg-lusso-blue" />
+                )}
+                {/* Gradiente inferior para el nombre */}
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-lusso-charcoal/90 to-transparent" />
+                <p className="absolute bottom-4 left-4 right-4 font-display font-semibold text-sm text-lusso-cream">
+                  {imperdible.nombre}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Controles de navegación — fuera del contenido animable */}
+      <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 items-center gap-6">
+        <button
+          onClick={() => cambiarDestino(-1)}
+          aria-label="Destino anterior"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-lusso-cream/30 text-lusso-cream transition-colors hover:bg-lusso-cream hover:text-lusso-charcoal"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <span className="font-body text-sm text-lusso-cream/60">
+          {index + 1} / {lista.length}
+        </span>
+        <button
+          onClick={() => cambiarDestino(1)}
+          aria-label="Siguiente destino"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-lusso-cream/30 text-lusso-cream transition-colors hover:bg-lusso-cream hover:text-lusso-charcoal"
+        >
+          <ChevronRight size={20} />
+        </button>
+      </div>
+    </section>
+  );
+}
