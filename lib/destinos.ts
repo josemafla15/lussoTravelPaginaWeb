@@ -31,7 +31,7 @@ export const destinos: Destino[] = [
     ],
     frase:
       "Santa Marta lo tiene todo: playas paradisíacas, naturaleza, historia y experiencias inolvidables.",
-    imagen: "/images/destinos/santa_marta.jpg",
+    imagen: "/images/destinos/santa_marta.webp",
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ export const destinos: Destino[] = [
       { nombre: "Mar de los Siete Colores" },
     ],
     frase: "Déjese cautivar por el Mar de los Siete Colores y playas de ensueño.",
-    imagen: "/images/destinos/sanAndres.jpg",
+    imagen: "/images/destinos/sanAndres.webp",
   },
   {
     id: 3,
@@ -64,7 +64,7 @@ export const destinos: Destino[] = [
     ],
     frase:
       "Cartagena combina historia, cultura y el encanto del Caribe en un destino que enamora.",
-    imagen: "/images/destinos/cartagena.jpg",
+    imagen: "/images/destinos/cartagena.webp",
   },
   {
     id: 4,
@@ -82,7 +82,7 @@ export const destinos: Destino[] = [
     ],
     frase:
       "Un destino donde la naturaleza, la cultura y el Caribe crean una experiencia inolvidable.",
-    imagen: "/images/destinos/guajira.jpg",
+    imagen: "/images/destinos/guajira.webp",
   },
   {
     id: 5,
@@ -99,7 +99,7 @@ export const destinos: Destino[] = [
     ],
     frase:
       "El destino perfecto para quienes buscan tranquilidad y el encanto auténtico del Caribe.",
-    imagen: "/images/destinos/covenas.jpg",
+    imagen: "/images/destinos/covenas.webp",
   },
   {
     id: 6,
@@ -115,7 +115,7 @@ export const destinos: Destino[] = [
       { nombre: "Copacabana", imagen: "/images/destinos/copacabana.jpg" },
     ],
     frase: "Déjese sorprender por la magia de Río, donde el mar y la cultura se unen.",
-    imagen: "/images/destinos/rio.jpg",
+    imagen: "/images/destinos/rio.webp",
   },
   {
     id: 7,
@@ -132,7 +132,7 @@ export const destinos: Destino[] = [
     ],
     frase:
       "Descubra el encanto del Caribe mexicano y haga realidad el destino de sus sueños.",
-    imagen: "/images/destinos/cancun.jpg",
+    imagen: "/images/destinos/cancun.webp",
   },
   {
     id: 8,
@@ -149,7 +149,7 @@ export const destinos: Destino[] = [
     ],
     frase:
       "Descubra la grandeza de CDMX, donde la historia milenaria y la cultura vibrante se unen.",
-    imagen: "/images/destinos/ciudadmexico.jpg",
+    imagen: "/images/destinos/ciudadmexico.webp",
   },
   {
     id: 9,
@@ -166,7 +166,7 @@ export const destinos: Destino[] = [
     ],
     frase:
       "Déjese envolver por la belleza del Caribe dominicano y viva unas vacaciones inolvidables.",
-    imagen: "/images/destinos/puntacana.jpg",
+    imagen: "/images/destinos/puntacana.webp",
   },
   {
     id: 10,
@@ -183,7 +183,7 @@ export const destinos: Destino[] = [
     ],
     frase:
       "Un destino que lo tiene todo: modernidad, historia, naturaleza y playas espectaculares.",
-    imagen: "/images/destinos/ciudadPanama.jpg",
+    imagen: "/images/destinos/ciudadPanama.webp",
   },
   {
     id: 11,
@@ -200,7 +200,7 @@ export const destinos: Destino[] = [
     ],
     frase:
       "No importa cuál sea el viaje de sus sueños, siempre habrá un circuito diseñado para usted.",
-    imagen: "/images/destinos/europa.jpg",
+    imagen: "/images/destinos/europa.webp",
   },
   {
     id: 12,
@@ -217,6 +217,6 @@ export const destinos: Destino[] = [
     ],
     frase:
       "Descubra un destino donde cada rincón cuenta una historia de excelencia, tradición y asombro.",
-    imagen: "/images/destinos/japon.jpg",
+    imagen: "/images/destinos/japon.webp",
   },
 ];

@@ -125,7 +125,8 @@ export default function DestinoExplorer({ tipo }: Props) {
                     src={imperdible.imagen}
                     alt={imperdible.nombre}
                     fill
-                    className="object-cover"
+                    className="object-cover opacity-0 transition-opacity duration-500"
+                    onLoad={(e) => e.currentTarget.classList.remove("opacity-0")}
                   />
                 ) : (
                   // Fallback sin foto: color de marca
