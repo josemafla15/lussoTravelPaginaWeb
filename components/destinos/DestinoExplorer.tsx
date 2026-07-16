@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { destinos, type Destino } from "@/lib/destinos";
+import { destinos, type Destino, type Imperdible } from "@/lib/destinos";
 import { WHATSAPP } from "@/lib/config";
 
 type Props = {
@@ -39,6 +39,24 @@ export default function DestinoExplorer({ tipo }: Props) {
       }
     );
   }, []);
+
+  // Precarga las fotos (principal + imperdibles) de los destinos vecinos
+  useEffect(() => {
+    const siguiente = lista[(index + 1) % lista.length];
+    const anterior = lista[(index - 1 + lista.length) % lista.length];
+
+    [siguiente, anterior].forEach((d) => {
+      const img = new window.Image();
+      img.src = d.imagen;
+
+      d.imperdibles.slice(0, 3).forEach((imp) => {
+        if (imp.imagen) {
+          const impImg = new window.Image();
+          impImg.src = imp.imagen;
+        }
+      });
+    });
+  }, [index, lista]);
 
   const cambiarDestino = (direccion: 1 | -1) => {
     if (animando) return; // evita clics dobles durante la animación
@@ -116,28 +134,7 @@ export default function DestinoExplorer({ tipo }: Props) {
           {/* Cards de imperdibles */}
           <div className="flex gap-4 lg:pr-4">
             {destino.imperdibles.slice(0, 3).map((imperdible) => (
-              <div
-                key={imperdible.nombre}
-                className="group relative h-64 w-40 shrink-0 cursor-pointer overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-105"
-              >
-                {imperdible.imagen ? (
-                  <Image
-                    src={imperdible.imagen}
-                    alt={imperdible.nombre}
-                    fill
-                    className="object-cover opacity-0 transition-opacity duration-500"
-                    onLoad={(e) => e.currentTarget.classList.remove("opacity-0")}
-                  />
-                ) : (
-                  // Fallback sin foto: color de marca
-                  <div className="absolute inset-0 bg-lusso-blue" />
-                )}
-                {/* Gradiente inferior para el nombre */}
-                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-lusso-charcoal/90 to-transparent" />
-                <p className="absolute bottom-4 left-4 right-4 font-display font-semibold text-sm text-lusso-cream">
-                  {imperdible.nombre}
-                </p>
-              </div>
+              <ImperdibleCard key={imperdible.nombre} imperdible={imperdible} />
             ))}
           </div>
         </div>
@@ -164,5 +161,32 @@ export default function DestinoExplorer({ tipo }: Props) {
         </button>
       </div>
     </section>
+  );
+}
+
+/** Card de imperdible con fade-in controlado por estado de React (evita hydration mismatch) */
+function ImperdibleCard({ imperdible }: { imperdible: Imperdible }) {
+  const [cargada, setCargada] = useState(false);
+
+  return (
+    <div className="group relative h-64 w-40 shrink-0 cursor-pointer overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-105">
+      {imperdible.imagen ? (
+        <Image
+          src={imperdible.imagen}
+          alt={imperdible.nombre}
+          fill
+          className={`object-cover transition-opacity duration-500 ${
+            cargada ? "opacity-100" : "opacity-0"
+          }`}
+          onLoad={() => setCargada(true)}
+        />
+      ) : (
+        <div className="absolute inset-0 bg-lusso-blue" />
+      )}
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-lusso-charcoal/90 to-transparent" />
+      <p className="absolute bottom-4 left-4 right-4 font-display font-semibold text-sm text-lusso-cream">
+        {imperdible.nombre}
+      </p>
+    </div>
   );
 }
