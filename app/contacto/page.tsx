@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { MessageCircle, Mail, MapPin, Clock } from "lucide-react";
+import { WHATSAPP } from "@/lib/config";
 
 const destinos = [
   "Santa Marta",
@@ -11,6 +12,12 @@ const destinos = [
   "Cancún",
   "Otro destino",
 ];
+
+export const metadata = {
+  title: "Contacto",
+  description:
+    "Hablemos de tu próximo viaje. Escríbenos por WhatsApp o déjanos tus datos y te contactamos con una cotización a tu medida.",
+};
 
 export default function ContactoPage() {
   return (
@@ -125,9 +132,12 @@ export default function ContactoPage() {
         <div className="mx-auto mt-16 max-w-6xl border-t border-lusso-cream/10 px-6 pt-12">
           <div className="grid gap-8 text-center sm:grid-cols-2 lg:grid-cols-4">
             <a
-              href="#"
+              href={`https://wa.me/${WHATSAPP}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex flex-col items-center gap-2 text-lusso-cream/80 transition-colors hover:text-lusso-sage"
             >
+            
               <MessageCircle size={22} className="text-lusso-sage" />
               <span className="text-sm">WhatsApp — respuesta inmediata</span>
             </a>

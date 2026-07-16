@@ -43,7 +43,7 @@ export default function DestinosDestacados() {
                   className="object-cover"
                 />
                 {/* Botón CTA */}
-                <button className="absolute bottom-6 right-6 rounded-full bg-lusso-sage px-6 py-2 text-sm font-semibold text-lusso-charcoal hover:opacity-90 transition-opacity">
+                <button className="absolute bottom-6 right-6 z-10 cursor-pointer rounded-full bg-lusso-sage px-6 py-2 text-sm font-semibold text-lusso-charcoal hover:opacity-90 transition-opacity">
                   Quiero saber más
                 </button>
               </div>

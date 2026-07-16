@@ -1,15 +1,19 @@
 import Image from "next/image";
-import { servicios } from "@/lib/servicios";
 import CtaBanner from "@/components/home/ctaBannet";
 import ServiciosInteractivos from "./ServiciosInteractivos";
+import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
-const WHATSAPP = "573000000000";
+export const metadata = {
+  title: "Servicios",
+  description:
+    "Luna de miel, viajes en familia, planes para empresa, pasadías, circuitos por el mundo y aventura. Cada viaje diseñado a tu medida.",
+};
 
 export default function ServiciosPage() {
   return (
     <main>
       {/* Hero compacto */}
-      <section className="relative flex h-[55vh] min-h-[400px] items-center justify-center">
+      <section className="relative flex min-h-[45vh] items-center justify-center pt-32 pb-16">
         <Image
           src="/images/servicios/hero.jpg"
           alt=""
@@ -34,10 +38,13 @@ export default function ServiciosPage() {
       {/* Proceso */}
       <section className="bg-lusso-charcoal py-20">
         <div className="mx-auto max-w-5xl px-6 text-center">
-          <h2 className="font-display font-semibold text-3xl text-lusso-cream md:text-4xl">
-            ¿Cómo <span className="italic">funciona?</span>
-          </h2>
-          <div className="mt-12 grid gap-10 md:grid-cols-3">
+          <RevealOnScroll>
+            <h2 className="font-display font-semibold text-3xl text-lusso-cream md:text-4xl">
+              ¿Cómo <span className="italic">funciona?</span>
+            </h2>
+          </RevealOnScroll>
+
+          <RevealOnScroll stagger className="mt-12 grid gap-10 md:grid-cols-3">
             {[
               {
                 paso: "01",
@@ -65,7 +72,7 @@ export default function ServiciosPage() {
                 <p className="mt-2 text-sm text-lusso-cream/70">{item.texto}</p>
               </div>
             ))}
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 

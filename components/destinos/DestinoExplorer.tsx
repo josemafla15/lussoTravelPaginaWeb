@@ -3,10 +3,10 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { destinos, type Destino } from "@/lib/destinos";
-
-const WHATSAPP = "573000000000";
+import { WHATSAPP } from "@/lib/config";
 
 type Props = {
   tipo: Destino["tipo"];
@@ -17,8 +17,28 @@ export default function DestinoExplorer({ tipo }: Props) {
   const [index, setIndex] = useState(0);
   const [animando, setAnimando] = useState(false);
   const contenedorRef = useRef<HTMLDivElement>(null);
+  const infoRef = useRef<HTMLDivElement>(null);
 
   const destino = lista[index];
+
+  // Animación de entrada — solo en la primera carga
+  useGSAP(() => {
+    if (!infoRef.current) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    gsap.fromTo(
+      Array.from(infoRef.current.children),
+      { y: 24, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.1,
+        delay: 0.2,
+        ease: "power2.out",
+      }
+    );
+  }, []);
 
   const cambiarDestino = (direccion: 1 | -1) => {
     if (animando) return; // evita clics dobles durante la animación
@@ -73,7 +93,7 @@ export default function DestinoExplorer({ tipo }: Props) {
         {/* Layout del contenido */}
         <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center gap-12 px-6 py-28 lg:flex-row lg:items-center lg:justify-between">
           {/* Info del destino */}
-          <div className="max-w-xl">
+          <div ref={infoRef} className="max-w-xl">
             <p className="font-body text-sm uppercase tracking-[0.2em] text-lusso-sage">
               Descubre
             </p>
@@ -87,7 +107,7 @@ export default function DestinoExplorer({ tipo }: Props) {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-block rounded-full bg-lusso-sage px-8 py-3 text-sm font-semibold text-lusso-charcoal transition-opacity hover:opacity-90"
+              className="mt-8 inline-block rounded-full bg-lusso-sage px-8 py-3 text-sm font-semibold text-lusso-charcoal transition-all hover:opacity-90 active:scale-95"
             >
               Cotizar este destino
             </a>
@@ -127,7 +147,7 @@ export default function DestinoExplorer({ tipo }: Props) {
         <button
           onClick={() => cambiarDestino(-1)}
           aria-label="Destino anterior"
-          className="flex h-12 w-12 items-center justify-center rounded-full border border-lusso-cream/30 text-lusso-cream transition-colors hover:bg-lusso-cream hover:text-lusso-charcoal"
+          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-lusso-cream/30 text-lusso-cream transition-colors hover:bg-lusso-cream hover:text-lusso-charcoal active:scale-95"
         >
           <ChevronLeft size={20} />
         </button>
@@ -137,7 +157,7 @@ export default function DestinoExplorer({ tipo }: Props) {
         <button
           onClick={() => cambiarDestino(1)}
           aria-label="Siguiente destino"
-          className="flex h-12 w-12 items-center justify-center rounded-full border border-lusso-cream/30 text-lusso-cream transition-colors hover:bg-lusso-cream hover:text-lusso-charcoal"
+          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-lusso-cream/30 text-lusso-cream transition-colors hover:bg-lusso-cream hover:text-lusso-charcoal active:scale-95"
         >
           <ChevronRight size={20} />
         </button>

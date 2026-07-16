@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { WHATSAPP } from "@/lib/config";
+import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 type Props = {
   titulo?: string;
@@ -21,20 +23,20 @@ export default function CtaBanner({
     <section className={color === "blue" ? "bg-lusso-blue py-16" : "bg-lusso-sage py-16"}>
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 px-6 md:flex-row md:justify-between">
         {/* Mensaje + CTA */}
-        <div className="text-center md:text-left">
+        <RevealOnScroll className="text-center md:text-left">
           <h2 className="font-display font-semibold text-3xl text-lusso-charcoal md:text-4xl">
             {titulo} <span className="italic">{tituloItalica}</span>
           </h2>
           <p className="mt-3 text-lusso-charcoal/80">{subtitulo}</p>
           <a
-            href={`https://wa.me/573000000000?text=${encodeURIComponent(mensajeWhatsApp)}`}
+            href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensajeWhatsApp)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-block rounded-full bg-lusso-charcoal px-8 py-3 text-sm font-semibold text-lusso-cream hover:opacity-90 transition-opacity"
+            className="mt-6 inline-block rounded-full bg-lusso-charcoal px-8 py-3 text-sm font-semibold text-lusso-cream hover:opacity-90 transition-opacity active:scale-95"
           >
             Hablemos por WhatsApp
           </a>
-        </div>
+        </RevealOnScroll>
 
         {/* Mascota / asset */}
         <div className="relative h-48 w-48 md:h-56 md:w-56 shrink-0">

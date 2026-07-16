@@ -23,8 +23,12 @@ const elmSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Lusso Travel",
-  description: "Agencia de viajes — experiencias a tu medida",
+  title: {
+    default: "Lusso Travel | Agencia de viajes a tu medida",
+    template: "%s | Lusso Travel",
+  },
+  description:
+    "Agencia de viajes en Colombia. Diseñamos experiencias a tu medida: Caribe colombiano, Europa, luna de miel, viajes en familia y más. Cotiza por WhatsApp.",
 };
 
 export default function RootLayout({

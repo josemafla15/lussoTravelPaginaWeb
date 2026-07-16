@@ -1,6 +1,12 @@
 import DestinoExplorer from "@/components/destinos/DestinoExplorer";
 import CtaBanner from "@/components/home/ctaBannet";
 
+export const metadata = {
+  title: "Destinos internacionales",
+  description:
+    "Descubre el mundo con Lusso Travel: Cancún, Punta Cana, Río de Janeiro, Ciudad de México, Panamá y circuitos por Europa. Cotiza tu viaje soñado.",
+};
+
 export default function DestinosInternacionalesPage() {
   return (
     <main>

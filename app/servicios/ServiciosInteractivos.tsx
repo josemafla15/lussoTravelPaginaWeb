@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { servicios } from "@/lib/servicios";
-
-const WHATSAPP = "573000000000";
+import { WHATSAPP } from "@/lib/config";
 
 export default function ServiciosInteractivos() {
   const [activo, setActivo] = useState(servicios[0]);
@@ -60,7 +59,7 @@ export default function ServiciosInteractivos() {
             </div>
 
             {/* Card flotante */}
-            <div className="absolute -left-16 bottom-10 w-96 rounded-2xl bg-lusso-cream p-8 shadow-xl">
+            <div className="absolute -left-16 bottom-10 w-100 rounded-2xl bg-lusso-cream/60 p-8 shadow-xl backdrop-blur-md">
               <h3 className="font-display font-semibold text-2xl text-lusso-charcoal">
                 {activo.titulo}
               </h3>

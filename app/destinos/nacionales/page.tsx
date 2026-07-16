@@ -1,6 +1,12 @@
 import DestinoExplorer from "@/components/destinos/DestinoExplorer";
 import CtaBanner from "@/components/home/ctaBannet";
 
+export const metadata = {
+  title: "Destinos nacionales",
+  description:
+    "Viaja por Colombia con Lusso Travel: Santa Marta, San Andrés, Cartagena, La Guajira y Coveñas. Planes a tu medida con acompañamiento completo.",
+};
+
 export default function DestinosNacionalesPage() {
   return (
     <main>

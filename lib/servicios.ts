@@ -62,6 +62,24 @@ export const servicios: Servicio[] = [
     imagen: "/images/servicios/aventura1.jpg",
     destacado: false,
   },
+  {
+  id: 7,
+  slug: "festivales",
+  titulo: "Festivales",
+  descripcion:
+    "Vive los festivales y eventos más importantes del mundo. Música, cultura y energía en destinos que no querrás perderte.",
+  imagen: "/images/servicios/festivales.jpg",
+  destacado: false,
+  },
+  {
+  id: 8,
+  slug: "planes-para-amigos",
+  titulo: "Planes para amigos",
+  descripcion:
+    "Escapadas para disfrutar con tu grupo de amigos. Aventura, playa o ciudad, siempre con la mejor organización.",
+  imagen: "/images/servicios/amigos.jpg",
+  destacado: false,
+  },
 ];
 
 export const serviciosDestacados = servicios.filter((s) => s.destacado);
