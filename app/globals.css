@@ -25,3 +25,12 @@ body {
 .animate-fill-bar {
   animation: fill-bar 6.5s linear forwards;
 }
+
+@keyframes fill-bar-h {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.animate-fill-bar-h {
+  animation: fill-bar-h 6.5s linear forwards;
+}

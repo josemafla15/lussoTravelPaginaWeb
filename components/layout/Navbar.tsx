@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -9,24 +9,29 @@ export default function Navbar() {
   const [visible, setVisible] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [destinosOpen, setDestinosOpen] = useState(false);
-  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setVisible(true);
-      if (hideTimer.current) clearTimeout(hideTimer.current);
-      hideTimer.current = setTimeout(() => {
-        if (!mobileOpen && !destinosOpen) setVisible(false);
-      }, 2000);
-    };
+    let lastScrollY = window.scrollY;
+    let quietTime = 0;
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    const interval = setInterval(() => {
+      const currentScrollY = window.scrollY;
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (hideTimer.current) clearTimeout(hideTimer.current);
-    };
+      if (currentScrollY !== lastScrollY) {
+        // Hubo movimiento — mostrar y reiniciar el contador de quietud
+        setVisible(true);
+        quietTime = 0;
+        lastScrollY = currentScrollY;
+      } else {
+        // No hubo movimiento — acumular tiempo quieto
+        quietTime += 200;
+        if (quietTime >= 2000 && !mobileOpen && !destinosOpen) {
+          setVisible(false);
+        }
+      }
+    }, 200);
+
+    return () => clearInterval(interval);
   }, [mobileOpen, destinosOpen]);
 
   return (

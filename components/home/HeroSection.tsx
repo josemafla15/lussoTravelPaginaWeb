@@ -85,17 +85,22 @@ export default function HeroSection() {
         </span>
       </div>
 
-      {/* Indicador horizontal — mobile */}
+      {/* Indicador horizontal — mobile, con barra de progreso */}
       <div className="absolute bottom-16 left-1/2 z-20 flex -translate-x-1/2 gap-2 md:hidden">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
             aria-label={`Ir a la imagen ${i + 1}`}
-            className={`h-1.5 rounded-full transition-all ${
-              i === current ? "w-6 bg-lusso-cream" : "w-1.5 bg-lusso-cream/40"
-            }`}
-          />
+            className="relative h-1.5 w-8 overflow-hidden rounded-full bg-lusso-cream/25"
+          >
+            {i === current && (
+              <span
+                key={current}
+                className="absolute inset-y-0 left-0 block h-full bg-lusso-cream animate-fill-bar-h"
+              />
+            )}
+          </button>
         ))}
       </div>
     </section>
