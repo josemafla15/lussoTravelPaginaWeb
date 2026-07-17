@@ -11,33 +11,33 @@ export default function Navbar() {
   const [destinosOpen, setDestinosOpen] = useState(false);
 
   useEffect(() => {
-  const esDesktop = () => window.matchMedia("(min-width: 768px)").matches;
+    const esDesktop = () => window.matchMedia("(min-width: 768px)").matches;
 
-  if (!esDesktop()) {
-    // En mobile no hacemos nada — visible ya es true por defecto
-    return;
-  }
-
-  let lastScrollY = window.scrollY;
-  let quietTime = 0;
-
-  const interval = setInterval(() => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY !== lastScrollY) {
-      setVisible(true);
-      quietTime = 0;
-      lastScrollY = currentScrollY;
-    } else {
-      quietTime += 200;
-      if (quietTime >= 2000 && !mobileOpen && !destinosOpen) {
-        setVisible(false);
-      }
+    if (!esDesktop()) {
+      // En mobile no hacemos nada — visible ya es true por defecto
+      return;
     }
-  }, 200);
 
-  return () => clearInterval(interval);
-}, [mobileOpen, destinosOpen]);
+    let lastScrollY = window.scrollY;
+    let quietTime = 0;
+
+    const interval = setInterval(() => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY !== lastScrollY) {
+        setVisible(true);
+        quietTime = 0;
+        lastScrollY = currentScrollY;
+      } else {
+        quietTime += 200;
+        if (quietTime >= 2000 && !mobileOpen && !destinosOpen) {
+          setVisible(false);
+        }
+      }
+    }, 200);
+
+    return () => clearInterval(interval);
+  }, [mobileOpen, destinosOpen]);
 
   return (
     <header
@@ -45,10 +45,13 @@ export default function Navbar() {
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-center gap-12 px-6 py-2 md:py-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 md:justify-center md:gap-12 md:py-4">
+        {/* Espaciador invisible en mobile para centrar el logo */}
+        <div className="w-6 md:hidden" />
+
         {/* Logotipo */}
         <Link href="/" aria-label="Ir al inicio">
-          <div className="relative h-12 w-32 md:h-24 md:w-64">
+          <div className="relative h-16 w-40 md:h-24 md:w-64">
             <Image
               src="/images/brand/logotipo2.png"
               alt="Lusso Travel"
