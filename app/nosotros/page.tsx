@@ -7,6 +7,7 @@ const equipo = [
     nombre: "Julio Insuasty",
     cargo: "Cofundador de Lusso Travel",
     foto: "/images/nosotros/julio.jpeg",
+    posicion: "object-center",
     bio: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -18,6 +19,7 @@ const equipo = [
     nombre: "Luis Solarte",
     cargo: "Cofundador de Lusso Travel",
     foto: "/images/nosotros/luis.jpeg",
+    posicion: "object-top",
     bio: [
       "Para mí, viajar es mucho más que llegar a un destino; es descubrir nuevas perspectivas, conectar con culturas fascinantes y encontrar inspiración en lugares que parecen sacados de una postal. Cada viaje representa una oportunidad para aprender, sorprenderse y crear recuerdos que permanecen para siempre.",
       "Mi mayor sueño es conocer Japón, un país que admiro por su perfecta armonía entre tradición, innovación y excelencia. Es un destino que inspira mi forma de entender los viajes y reafirma mi pasión por descubrir lugares capaces de sorprender, emocionar y dejar una huella imborrable.",
@@ -121,7 +123,7 @@ export default function NosotrosPage() {
                       src={persona.foto}
                       alt={persona.nombre}
                       fill
-                      className="object-cover"
+                      className={`object-cover ${persona.posicion}`}
                     />
                   </div>
                 </div>
@@ -188,33 +190,33 @@ export default function NosotrosPage() {
       </section>
 
       <section className="relative overflow-hidden bg-lusso-blue py-20">
-  <RevealOnScroll className="relative mx-auto max-w-3xl px-6 text-center">
-    {/* Asset al lado del texto */}
-    <div className="pointer-events-none absolute -right-32 top-1/2 hidden h-48 w-48 -translate-y-1/2 lg:block">
-      <Image
-        src="/images/assets/asset_04.png"
-        alt=""
-        fill
-        className="object-contain"
-      />
-    </div>
+        <RevealOnScroll className="relative mx-auto max-w-3xl px-6 text-center">
+          {/* Asset al lado del texto */}
+          <div className="pointer-events-none absolute -right-32 top-1/2 hidden h-48 w-48 -translate-y-1/2 lg:block">
+            <Image
+              src="/images/assets/asset_04.png"
+              alt=""
+              fill
+              className="object-contain"
+            />
+          </div>
 
-    <h2 className="font-display font-bold text-3xl text-lusso-charcoal md:text-4xl">
-      ¿Listo para dejar el viaje de tus sueños en las{" "}
-      <span className="italic">mejores manos?</span>
-    </h2>
-    <a
-      href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-        "Hola, quiero planear mi viaje con ustedes"
-      )}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="mt-8 inline-block rounded-full bg-lusso-charcoal px-10 py-4 font-semibold text-lusso-cream transition-opacity hover:opacity-90 active:scale-95"
-    >
-      Hablemos
-    </a>
-  </RevealOnScroll>
-</section>
+          <h2 className="font-display font-bold text-3xl text-lusso-charcoal md:text-4xl">
+            ¿Listo para dejar el viaje de tus sueños en las{" "}
+            <span className="italic">mejores manos?</span>
+          </h2>
+          <a
+            href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
+              "Hola, quiero planear mi viaje con ustedes"
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block rounded-full bg-lusso-charcoal px-10 py-4 font-semibold text-lusso-cream transition-opacity hover:opacity-90 active:scale-95"
+          >
+            Hablemos
+          </a>
+        </RevealOnScroll>
+      </section>
     </main>
   );
 }
