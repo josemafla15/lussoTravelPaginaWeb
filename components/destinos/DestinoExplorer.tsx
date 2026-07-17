@@ -109,7 +109,7 @@ export default function DestinoExplorer({ tipo }: Props) {
         <div className="absolute inset-0 bg-linear-to-t from-lusso-charcoal via-lusso-charcoal/60 to-transparent lg:bg-linear-to-r lg:from-lusso-charcoal lg:via-lusso-charcoal/50 lg:to-transparent" />
 
         {/* Layout del contenido */}
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end gap-8 px-6 py-24 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-28">
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end gap-6 px-6 py-20 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-28">
           {/* Info del destino */}
           <div ref={infoRef} className="max-w-xl">
             <p className="font-body text-sm uppercase tracking-[0.2em] text-lusso-sage">
@@ -118,7 +118,9 @@ export default function DestinoExplorer({ tipo }: Props) {
             <h1 className="mt-2 font-display font-bold text-5xl text-lusso-cream md:text-7xl">
               {destino.nombre}
             </h1>
-            <p className="mt-5 text-lusso-cream/80">{destino.descripcion}</p>
+            <p className="mt-5 text-lusso-cream/80 line-clamp-2 lg:line-clamp-none">
+              {destino.descripcion}
+            </p>
             <a
               href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
                 `Hola, me interesa viajar a ${destino.nombre}`
@@ -171,7 +173,7 @@ function ImperdibleCard({ imperdible }: { imperdible: Imperdible }) {
   const [cargada, setCargada] = useState(false);
 
   return (
-    <div className="group relative h-64 w-40 shrink-0 cursor-pointer overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-105">
+    <div className="group relative h-44 w-32 shrink-0 cursor-pointer overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-105 lg:h-64 lg:w-40">
       {imperdible.imagen ? (
         <Image
           src={imperdible.imagen}
