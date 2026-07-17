@@ -105,11 +105,11 @@ export default function DestinoExplorer({ tipo }: Props) {
           priority
         />
 
-        {/* Gradiente: oscuro a la izquierda, se disuelve a la derecha */}
-        <div className="absolute inset-0 bg-linear-to-r from-lusso-charcoal via-lusso-charcoal/50 to-transparent" />
+        {/* Gradiente: vertical en mobile, lateral desde desktop */}
+        <div className="absolute inset-0 bg-linear-to-t from-lusso-charcoal via-lusso-charcoal/60 to-transparent lg:bg-linear-to-r lg:from-lusso-charcoal lg:via-lusso-charcoal/50 lg:to-transparent" />
 
         {/* Layout del contenido */}
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center gap-12 px-6 py-28 lg:flex-row lg:items-center lg:justify-between">
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-end gap-8 px-6 py-24 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-28">
           {/* Info del destino */}
           <div ref={infoRef} className="max-w-xl">
             <p className="font-body text-sm uppercase tracking-[0.2em] text-lusso-sage">
@@ -131,17 +131,19 @@ export default function DestinoExplorer({ tipo }: Props) {
             </a>
           </div>
 
-          {/* Cards de imperdibles */}
-          <div className="flex gap-4 lg:pr-4">
+          {/* Cards de imperdibles — scroll horizontal en mobile, fijas en desktop */}
+          <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 lg:snap-none lg:overflow-visible lg:pb-0 lg:pr-4">
             {destino.imperdibles.slice(0, 3).map((imperdible) => (
-              <ImperdibleCard key={imperdible.nombre} imperdible={imperdible} />
+              <div key={imperdible.nombre} className="snap-start">
+                <ImperdibleCard imperdible={imperdible} />
+              </div>
             ))}
           </div>
         </div>
       </div>
 
       {/* Controles de navegación — fuera del contenido animable */}
-      <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 items-center gap-6">
+      <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-6 lg:bottom-10">
         <button
           onClick={() => cambiarDestino(-1)}
           aria-label="Destino anterior"
