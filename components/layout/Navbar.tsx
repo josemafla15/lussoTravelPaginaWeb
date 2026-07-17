@@ -11,28 +11,33 @@ export default function Navbar() {
   const [destinosOpen, setDestinosOpen] = useState(false);
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-    let quietTime = 0;
+  const esDesktop = () => window.matchMedia("(min-width: 768px)").matches;
 
-    const interval = setInterval(() => {
-      const currentScrollY = window.scrollY;
+  if (!esDesktop()) {
+    // En mobile no hacemos nada — visible ya es true por defecto
+    return;
+  }
 
-      if (currentScrollY !== lastScrollY) {
-        // Hubo movimiento — mostrar y reiniciar el contador de quietud
-        setVisible(true);
-        quietTime = 0;
-        lastScrollY = currentScrollY;
-      } else {
-        // No hubo movimiento — acumular tiempo quieto
-        quietTime += 200;
-        if (quietTime >= 2000 && !mobileOpen && !destinosOpen) {
-          setVisible(false);
-        }
+  let lastScrollY = window.scrollY;
+  let quietTime = 0;
+
+  const interval = setInterval(() => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY !== lastScrollY) {
+      setVisible(true);
+      quietTime = 0;
+      lastScrollY = currentScrollY;
+    } else {
+      quietTime += 200;
+      if (quietTime >= 2000 && !mobileOpen && !destinosOpen) {
+        setVisible(false);
       }
-    }, 200);
+    }
+  }, 200);
 
-    return () => clearInterval(interval);
-  }, [mobileOpen, destinosOpen]);
+  return () => clearInterval(interval);
+}, [mobileOpen, destinosOpen]);
 
   return (
     <header
@@ -40,10 +45,10 @@ export default function Navbar() {
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-center gap-12 px-6 py-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-center gap-12 px-6 py-2 md:py-4">
         {/* Logotipo */}
         <Link href="/" aria-label="Ir al inicio">
-          <div className="relative h-24 w-64">
+          <div className="relative h-12 w-32 md:h-24 md:w-64">
             <Image
               src="/images/brand/logotipo2.png"
               alt="Lusso Travel"
