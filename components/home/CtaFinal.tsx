@@ -1,5 +1,6 @@
 import Image from "next/image";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
+import { WHATSAPP } from "@/lib/config";
 
 export default function CtaFinal() {
   return (
@@ -21,7 +22,9 @@ export default function CtaFinal() {
           El mundo está esperando. <span className="italic">¿Y tú?</span>
         </h2>
         <a
-          href="https://wa.me/573000000000?text=Hola%2C%20quiero%20planear%20mi%20viaje"
+          href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
+            "Hola, quiero planear mi viaje"
+          )}`}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 inline-block rounded-full bg-lusso-sage px-10 py-4 font-semibold text-lusso-charcoal hover:opacity-90 transition-opacity active:scale-95"
