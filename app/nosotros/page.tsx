@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { WHATSAPP } from "@/lib/config";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
+import FAQ from "./faq";
 
 const equipo = [
   {
@@ -152,6 +153,9 @@ export default function NosotrosPage() {
           </div>
         </div>
       </section>
+
+
+      <FAQ />
 
       {/* Hoteles con los que trabajamos */}
       <section className="bg-lusso-cream py-16">

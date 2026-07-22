@@ -27,13 +27,14 @@ export default function PrivacidadPage() {
               1. Responsable del tratamiento
             </h2>
             <p className="mt-3">
-              Lusso Travel [RAZÓN SOCIAL COMPLETA — NIT XXX.XXX.XXX-X], con
-              domicilio en [DIRECCIÓN], Pasto, Colombia, es responsable del
-              tratamiento de los datos personales recolectados a través de
+              Lusso Travel SAS, identificada con NIT 902.061.085-9, con
+              domicilio en Cra 38 #20-22 Edificio La Castilla, Av. Los
+              Estudiantes, Apto. 401, Pasto, Nariño, Colombia, es responsable
+              del tratamiento de los datos personales recolectados a través de
               este sitio web y sus canales de atención, en cumplimiento de la
               Ley 1581 de 2012, el Decreto 1377 de 2013 y demás normas
-              aplicables. Canales de contacto: [CORREO OFICIAL] y WhatsApp
-              [NÚMERO].
+              aplicables. Canales de contacto: contacto@lussotravel.co y
+              WhatsApp +57 313 335 8995.
             </p>
           </div>
 
@@ -85,20 +86,20 @@ export default function PrivacidadPage() {
             </h2>
             <p className="mt-3">
               Para ejercer sus derechos, envíe su solicitud al correo
-              [CORREO OFICIAL], indicando su nombre completo, tipo y número de
-              identificación, la descripción del derecho que desea ejercer y
-              un medio de contacto para recibir respuesta. Las consultas serán
-              atendidas en un plazo máximo de diez (10) días hábiles contados
-              desde su recepción. Los reclamos serán atendidos en un plazo
-              máximo de quince (15) días hábiles; si no fuera posible
-              atenderlos en ese término, se le informará la nueva fecha de
-              respuesta, que no superará los ocho (8) días hábiles siguientes.
-              Si el reclamo resulta incompleto, se le requerirá dentro de los
-              cinco (5) días siguientes para que subsane la información;
-              transcurridos dos (2) meses sin respuesta, se entenderá
-              desistido. Usted podrá elevar queja ante la Superintendencia de
-              Industria y Comercio una vez agotado este trámite ante Lusso
-              Travel.
+              contacto@lussotravel.co, indicando su nombre completo, tipo y
+              número de identificación, la descripción del derecho que desea
+              ejercer y un medio de contacto para recibir respuesta. Las
+              consultas serán atendidas en un plazo máximo de diez (10) días
+              hábiles contados desde su recepción. Los reclamos serán
+              atendidos en un plazo máximo de quince (15) días hábiles; si no
+              fuera posible atenderlos en ese término, se le informará la
+              nueva fecha de respuesta, que no superará los ocho (8) días
+              hábiles siguientes. Si el reclamo resulta incompleto, se le
+              requerirá dentro de los cinco (5) días siguientes para que
+              subsane la información; transcurridos dos (2) meses sin
+              respuesta, se entenderá desistido. Usted podrá elevar queja ante
+              la Superintendencia de Industria y Comercio una vez agotado este
+              trámite ante Lusso Travel.
             </p>
           </div>
 
@@ -153,8 +154,8 @@ export default function PrivacidadPage() {
             </h2>
             <p className="mt-3">
               La atención de consultas, reclamos y solicitudes relacionadas
-              con datos personales está a cargo de [NOMBRE DEL RESPONSABLE O
-              ÁREA], contactable en [CORREO OFICIAL].
+              con datos personales está a cargo de Lusso Travel SAS,
+              contactable en contacto@lussotravel.co.
             </p>
           </div>
 

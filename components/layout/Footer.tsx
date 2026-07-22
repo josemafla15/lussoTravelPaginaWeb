@@ -112,7 +112,7 @@ export default function Footer() {
 
         {/* Línea inferior */}
         <div className="mt-12 border-t border-lusso-cream/10 pt-6 flex flex-col items-center justify-between gap-4 text-xs text-lusso-cream/50 md:flex-row">
-          <p>© {new Date().getFullYear()} Lusso Travel. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Lusso Travel. Todos los derechos reservados. RNT No. 287708.</p>
           <Link href="/privacidad" className="hover:text-lusso-sage transition-colors">
             Política de privacidad
           </Link>

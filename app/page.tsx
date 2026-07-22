@@ -4,7 +4,6 @@ import CtaBanner from "@/components/home/ctaBannet";
 import ServiciosDestacados from "@/components/home/ServiciosDestacados";
 import PorQueNosotros from "@/components/home/PorQueNosotros";
 import CtaFinal from "@/components/home/CtaFinal";
-import PopupDescuento from "@/components/ui/PopupDescuento";
 import Resenas from "@/components/home/Resenas";
 
 export const metadata = {
@@ -17,13 +16,12 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <DestinosDestacados />
+      {/* <DestinosDestacados /> */}
       <CtaBanner />
       <ServiciosDestacados />
       <Resenas />
       <PorQueNosotros />
       <CtaFinal />
-      <PopupDescuento />
     </main>
   );
 }

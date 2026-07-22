@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import PopupDescuento from "@/components/ui/PopupDescuento";
+import WhatsAppFlotante from "@/components/ui/WhatsAppFlotante";
 
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
@@ -42,6 +44,9 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <PopupDescuento />
+        <WhatsAppFlotante />
+
       </body>
     </html>
   );

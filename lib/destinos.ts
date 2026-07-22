@@ -44,7 +44,7 @@ export const destinos: Destino[] = [
     imperdibles: [
       { nombre: "Johnny Cay", imagen: "/images/destinos/johnny.svg" },
       { nombre: "Acuario Natural", imagen: "/images/destinos/acuario.jpg" },
-      { nombre: "Mar de los Siete Colores" },
+      { nombre: "Snorkel y buceo", imagen: "/images/destinos/snorkel.jpg" },
     ],
     frase: "Déjese cautivar por el Mar de los Siete Colores y playas de ensueño.",
     imagen: "/images/destinos/sanAndres.webp",
@@ -59,8 +59,8 @@ export const destinos: Destino[] = [
       "Ciudad Patrimonio de la Humanidad. Historia colonial, playas de Barú y el encanto único del Caribe.",
     imperdibles: [
       { nombre: "Ciudad Amurallada", imagen: "/images/destinos/ciudadamurallada.jpg" },
-      { nombre: "Islas del Rosario" },
-      { nombre: "Getsemaní" },
+      { nombre: "Islas del Rosario", imagen: "/images/destinos/islasRosario.jpg" },
+      { nombre: "Getsemaní", imagen: "/images/destinos/getsemani.jpg" },
     ],
     frase:
       "Cartagena combina historia, cultura y el encanto del Caribe en un destino que enamora.",
@@ -78,7 +78,6 @@ export const destinos: Destino[] = [
       { nombre: "Cabo de la Vela", imagen: "/images/destinos/cabo.jpg" },
       { nombre: "Punta Gallinas", imagen: "/images/destinos/puntagallinas.jpg" },
       { nombre: "Salares de Manaure", imagen: "/images/destinos/salar.jpg" },
-
     ],
     frase:
       "Un destino donde la naturaleza, la cultura y el Caribe crean una experiencia inolvidable.",
@@ -128,7 +127,7 @@ export const destinos: Destino[] = [
     imperdibles: [
       { nombre: "Isla Mujeres", imagen: "/images/destinos/islamujeres.jpg" },
       { nombre: "Chichén Itzá", imagen: "/images/destinos/chichen.jpg" },
-      { nombre: "Cenotes de la Riviera Maya" },
+      { nombre: "Museo Subacuático de Arte", imagen: "/images/destinos/museoSub.jpg" },
     ],
     frase:
       "Descubra el encanto del Caribe mexicano y haga realidad el destino de sus sueños.",
@@ -160,9 +159,9 @@ export const destinos: Destino[] = [
     descripcion:
       "El corazón del Caribe dominicano. Resorts de lujo, playas de ensueño y descanso total.",
     imperdibles: [
-      { nombre: "Playa Bávaro" },
-      { nombre: "Isla Saona" },
-      { nombre: "Hoyo Azul" },
+      { nombre: "Playa Bávaro", imagen: "/images/destinos/playabavaro.jpg" },
+      { nombre: "Isla Saona", imagen: "/images/destinos/playaSaona.jpg" },
+      { nombre: "Marina Cap Cana", imagen: "/images/destinos/capcana.jpg" },
     ],
     frase:
       "Déjese envolver por la belleza del Caribe dominicano y viva unas vacaciones inolvidables.",
