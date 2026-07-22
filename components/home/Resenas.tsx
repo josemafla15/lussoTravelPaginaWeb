@@ -53,7 +53,7 @@ export default function Resenas() {
         </h2>
 
         {/* Testimonio — desplazamiento horizontal */}
-        <div ref={contenidoRef} className="mt-12 flex min-h-[280px] flex-col justify-center md:min-h-[220px]">
+        <div ref={contenidoRef} className="mt-12 flex min-h-[480px] flex-col justify-center md:min-h-[280px]">
           <div className="flex justify-center gap-1">
             {Array.from({ length: resena.calificacion }).map((_, i) => (
               <Star
