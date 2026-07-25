@@ -45,15 +45,19 @@ export default function Navbar() {
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 md:justify-center md:gap-12 md:py-4">
+      <nav className="relative mx-auto flex min-h-14 max-w-7xl items-center justify-between overflow-visible px-6 py-1 md:min-h-20 md:justify-center md:gap-12 md:py-1">
         {/* Espaciador invisible en mobile para centrar el logo */}
         <div className="w-6 md:hidden" />
 
-        {/* Logotipo */}
-        <Link href="/" aria-label="Ir al inicio">
-          <div className="relative h-16 w-40 md:h-24 md:w-64">
+        {/* Logotipo — posicionado absoluto en mobile, en flujo normal en desktop */}
+        <Link
+          href="/"
+          aria-label="Ir al inicio"
+          className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-[60%] md:static md:translate-x-0 md:translate-y-0"
+        >
+          <div className="relative h-20 w-52 md:h-32 md:w-80 md:-translate-y-1.5 md:scale-125">
             <Image
-              src="/images/brand/logotipo2.png"
+              src="/images/brand/logotipo3.png"
               alt="Lusso Travel"
               fill
               className="object-contain"

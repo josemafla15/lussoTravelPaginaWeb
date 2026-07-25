@@ -65,7 +65,7 @@ export default function ContactoPage() {
       {/* Hero claro con asset */}
       <section className="relative overflow-hidden bg-lusso-blue pt-32 pb-16">
         <div className="relative mx-auto max-w-4xl px-6 text-center">
-          <div className="pointer-events-none absolute -right-40 top-1/2 hidden h-52 w-52 -translate-y-1/2 lg:block">
+          <div className="pointer-events-none absolute -right-40 top-1/2 hidden h-64 w-64 -translate-y-1/2 lg:block">
             <Image src="/images/assets/asset_05.png" alt="" fill className="object-contain" />
           </div>
           <h1 className="font-display font-bold text-4xl text-lusso-charcoal md:text-5xl">

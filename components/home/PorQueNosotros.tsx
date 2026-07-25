@@ -59,7 +59,7 @@ export default function PorQueNosotros() {
         <RevealOnScroll delay={0.15}>
           <div className="relative mt-14 overflow-hidden rounded-2xl bg-lusso-sage px-8 py-10 text-center">
             {/* Asset decorativo al lado derecho */}
-            <div className="pointer-events-none absolute -right-6 top-1/2 hidden h-56 w-56 -translate-y-1/2 lg:block">
+            <div className="pointer-events-none absolute -right-6 top-1/2 hidden h-76 w-76 -translate-y-1/2 lg:block">
               <Image
                 src="/images/assets/asset_03.png"
                 alt=""

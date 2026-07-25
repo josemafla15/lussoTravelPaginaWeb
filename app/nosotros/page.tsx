@@ -196,7 +196,7 @@ export default function NosotrosPage() {
       <section className="relative overflow-hidden bg-lusso-blue py-20">
         <RevealOnScroll className="relative mx-auto max-w-3xl px-6 text-center">
           {/* Asset al lado del texto */}
-          <div className="pointer-events-none absolute -right-32 top-1/2 hidden h-48 w-48 -translate-y-1/2 lg:block">
+          <div className="pointer-events-none absolute -right-32 top-1/2 hidden h-72 w-72 -translate-y-1/2 lg:block">
             <Image
               src="/images/assets/asset_04.png"
               alt=""

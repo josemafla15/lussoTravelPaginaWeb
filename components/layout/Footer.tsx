@@ -10,13 +10,13 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-4">
           {/* Logo + tagline */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 flex flex-col items-center text-center">
             <div className="relative h-32 w-80">
               <Image
-                src="/images/brand/logotipo2.png"
+                src="/images/brand/logotipo3.png"
                 alt="Lusso Travel"
                 fill
-                className="object-contain object-left"
+                className="object-contain"
               />
             </div>
             <p className="mt-4 text-sm text-lusso-cream/60">

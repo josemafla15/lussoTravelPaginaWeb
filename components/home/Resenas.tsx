@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { resenas } from "@/lib/resenas";
@@ -76,8 +77,8 @@ export default function Resenas() {
           </p>
         </div>
 
-        {/* Navegación */}
-        <div className="mt-10 flex items-center justify-center gap-6">
+        {/* Navegación + asset */}
+        <div className="relative mt-10 flex items-center justify-center gap-6">
           <button
             onClick={anterior}
             aria-label="Reseña anterior"
@@ -91,9 +92,14 @@ export default function Resenas() {
           <button
             onClick={siguiente}
             aria-label="Siguiente reseña"
-            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-lusso-charcoal/30 text-lusso-charcoal transition-colors hover:bg-lusso-charcoal hover:text-lusso-cream active:scale-95"
+            className="relative flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-lusso-charcoal/30 text-lusso-charcoal transition-colors hover:bg-lusso-charcoal hover:text-lusso-cream active:scale-95"
           >
             <ChevronRight size={18} />
+
+            {/* Asset pegado al botón */}
+<div className="pointer-events-none absolute left-full top-1/2 ml-4 hidden h-64 w-64 -translate-y-1/2 lg:block">
+  <Image src={resena.asset} alt="" fill className="object-contain" />
+</div>
           </button>
         </div>
       </div>
