@@ -75,9 +75,14 @@ export default function Resenas() {
           <p className="text-sm text-lusso-charcoal/60">
             Viajó a {resena.destino} · {resena.fecha}
           </p>
+
+          {/* Asset — visible en mobile, centrado debajo */}
+          <div className="relative mx-auto mt-6 h-20 w-20 lg:hidden">
+            <Image src={resena.asset} alt="" fill className="object-contain" />
+          </div>
         </div>
 
-        {/* Navegación + asset */}
+        {/* Navegación + asset desktop */}
         <div className="relative mt-10 flex items-center justify-center gap-6">
           <button
             onClick={anterior}
@@ -96,10 +101,10 @@ export default function Resenas() {
           >
             <ChevronRight size={18} />
 
-            {/* Asset pegado al botón */}
-<div className="pointer-events-none absolute left-full top-1/2 ml-4 hidden h-64 w-64 -translate-y-1/2 lg:block">
-  <Image src={resena.asset} alt="" fill className="object-contain" />
-</div>
+            {/* Asset pegado al botón — solo desktop */}
+            <div className="pointer-events-none absolute left-full top-1/2 ml-4 hidden h-64 w-64 -translate-y-1/2 lg:block">
+              <Image src={resena.asset} alt="" fill className="object-contain" />
+            </div>
           </button>
         </div>
       </div>

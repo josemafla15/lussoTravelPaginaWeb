@@ -218,4 +218,138 @@ export const destinos: Destino[] = [
       "Descubra un destino donde cada rincón cuenta una historia de excelencia, tradición y asombro.",
     imagen: "/images/destinos/japon.webp",
   },
+  {
+    id: 13,
+    slug: "francia",
+    nombre: "Francia",
+    tipo: "internacional",
+    categorias: ["Cultura", "Ciudad"],
+    descripcion:
+      "El romance, el arte y la gastronomía en su máxima expresión. De la icónica París a la Riviera Francesa.",
+    imperdibles: [
+      { nombre: "París", imagen: "/images/destinos/paris.jpg" },
+      { nombre: "Niza", imagen: "/images/destinos/niza.jpg" },
+    ],
+    frase: "Descubra la elegancia francesa, entre la capital del amor y la costa mediterránea.",
+    imagen: "/images/destinos/francia.jpg",
+  },
+  {
+    id: 14,
+    slug: "espana",
+    nombre: "España",
+    tipo: "internacional",
+    categorias: ["Cultura", "Ciudad"],
+    descripcion:
+      "Historia, arte y una energía única. De la capital madrileña a la vibrante Barcelona.",
+    imperdibles: [
+      { nombre: "Madrid", imagen: "/images/destinos/madrid.jpg" },
+      { nombre: "Barcelona", imagen: "/images/destinos/barcelona.jpg" },
+    ],
+    frase: "Viva la pasión española entre museos, arquitectura y vida nocturna inolvidable.",
+    imagen: "/images/destinos/espana.jpg",
+  },
+  {
+    id: 15,
+    slug: "italia",
+    nombre: "Italia",
+    tipo: "internacional",
+    categorias: ["Cultura", "Ciudad"],
+    descripcion:
+      "Cuna del arte y la historia. De la eterna Roma a los canales de Venecia.",
+    imperdibles: [
+      { nombre: "Roma", imagen: "/images/destinos/roma.jpg" },
+      { nombre: "Venecia", imagen: "/images/destinos/venecia.jpg" },
+    ],
+    frase: "Enamórese de Italia, donde cada calle cuenta una historia milenaria.",
+    imagen: "/images/destinos/italia.jpg",
+  },
+  {
+    id: 16,
+    slug: "portugal",
+    nombre: "Portugal",
+    tipo: "internacional",
+    categorias: ["Cultura", "Ciudad"],
+    descripcion:
+      "Encanto costero y tradición. De la colorida Lisboa a la histórica Oporto.",
+    imperdibles: [
+      { nombre: "Lisboa", imagen: "/images/destinos/lisboa.jpg" },
+      { nombre: "Oporto", imagen: "/images/destinos/oporto.jpg" },
+    ],
+    frase: "Descubra Portugal, entre miradores, fado y el sabor del Atlántico.",
+    imagen: "/images/destinos/portugal2.jpg",
+  },
+  {
+    id: 17,
+    slug: "reino-unido",
+    nombre: "Reino Unido",
+    tipo: "internacional",
+    categorias: ["Cultura", "Ciudad"],
+    descripcion:
+      "Historia real y modernidad. De la icónica Londres a la escocesa Edimburgo.",
+    imperdibles: [
+      { nombre: "Londres", imagen: "/images/destinos/londres.jpg" },
+      { nombre: "Edimburgo", imagen: "/images/destinos/edimburgo.jpg" },
+    ],
+    frase: "Explore el Reino Unido, entre castillos, museos y paisajes de leyenda.",
+    imagen: "/images/destinos/reinoUnido2.jpg",
+  },
+  {
+    id: 18,
+    slug: "alemania",
+    nombre: "Alemania",
+    tipo: "internacional",
+    categorias: ["Cultura", "Ciudad"],
+    descripcion:
+      "Historia, cerveza y arquitectura imponente. De la vibrante Berlín a la bávara Múnich.",
+    imperdibles: [
+      { nombre: "Berlín", imagen: "/images/destinos/berlin.jpg" },
+      { nombre: "Múnich", imagen: "/images/destinos/munich.jpg" },
+    ],
+    frase: "Viva Alemania entre historia, cultura y tradición centroeuropea.",
+    imagen: "/images/destinos/alemania.jpg",
+  },
+  {
+    id: 19,
+    slug: "paises-bajos",
+    nombre: "Países Bajos",
+    tipo: "internacional",
+    categorias: ["Cultura", "Ciudad"],
+    descripcion:
+      "Canales, bicicletas y tulipanes. Ámsterdam la convierte en una experiencia única.",
+    imperdibles: [
+      { nombre: "Ámsterdam", imagen: "/images/destinos/amsterdam.jpg" },
+    ],
+    frase: "Recorra Ámsterdam, ciudad de canales, arte y bicicletas.",
+    imagen: "/images/destinos/paisesBajos.jpg",
+  },
+  {
+    id: 20,
+    slug: "grecia",
+    nombre: "Grecia",
+    tipo: "internacional",
+    categorias: ["Cultura", "Playa"],
+    descripcion:
+      "Cuna de la civilización occidental. De la histórica Atenas a la paradisíaca Santorini.",
+    imperdibles: [
+      { nombre: "Atenas", imagen: "/images/destinos/atenas.jpg" },
+      { nombre: "Santorini", imagen: "/images/destinos/santorini.jpg" },
+    ],
+    frase: "Descubra Grecia, entre ruinas milenarias y atardeceres inolvidables.",
+    imagen: "/images/destinos/grecia.jpg",
+  },
+  {
+    id: 21,
+    slug: "finlandia",
+    nombre: "Finlandia",
+    tipo: "internacional",
+    categorias: ["Cultura", "Aventura"],
+    descripcion:
+      "Naturaleza nórdica y auroras boreales. De la moderna Helsinki a la mágica Rovaniemi.",
+    imperdibles: [
+      { nombre: "Helsinki", imagen: "/images/destinos/helsinki.jpg" },
+      { nombre: "Rovaniemi", imagen: "/images/destinos/rovaniemi.jpg" },
+    ],
+    frase: "Viva la magia nórdica de Finlandia, tierra de auroras y de Papá Noel.",
+    imagen: "/images/destinos/finlandia.jpg",
+  },
 ];
