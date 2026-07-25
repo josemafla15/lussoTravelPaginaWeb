@@ -30,13 +30,21 @@ export default function PorQueNosotros() {
     <section className="flex min-h-screen items-center bg-lusso-cream py-20">
       <div className="mx-auto max-w-6xl px-6">
         {/* Encabezado */}
-        <RevealOnScroll>
-          <div className="mb-14 text-center">
-            <h2 className="font-display font-semibold text-3xl text-lusso-charcoal md:text-4xl">
-              ¿Por qué viajar con <span className="italic">nosotros?</span>
-            </h2>
-          </div>
-        </RevealOnScroll>
+<RevealOnScroll>
+  <div className="mb-14 text-center">
+    <div className="relative mx-auto -mt-20 -mb-10 h-100 w-100">
+  <Image
+    src="/images/brand/logoEstrella.png"
+    alt=""
+    fill
+    className="object-contain"
+  />
+</div>
+    <h2 className="font-display font-semibold text-3xl text-lusso-charcoal md:text-4xl">
+      ¿Por qué viajar con <span className="italic">nosotros?</span>
+    </h2>
+  </div>
+</RevealOnScroll>
 
         {/* Grilla de razones — cascada */}
         <RevealOnScroll stagger className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

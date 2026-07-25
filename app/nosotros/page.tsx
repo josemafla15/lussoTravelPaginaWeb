@@ -65,30 +65,18 @@ export default function NosotrosPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div>
-              <h2 className="font-display font-semibold text-3xl text-lusso-charcoal">
+              <h2 className="font-display font-bold text-4xl text-lusso-charcoal md:text-6xl">
                 Nuestra <span className="italic">historia</span>
               </h2>
-              <p className="mt-5 text-lusso-charcoal/80">
-                En Lusso Travel creemos que viajar es mucho más que llegar a un
-                destino: es vivir experiencias que se convierten en recuerdos
-                para toda la vida. Nacimos del sueño de crear una agencia
-                diferente — cercana, transparente y altamente personalizada.
-              </p>
-              <p className="mt-4 text-lusso-charcoal/80">
-                Una experiencia premium no significa inaccesible: significa
-                atención a los detalles, asesoría experta y acompañamiento en
-                cada etapa. Diseñamos viajes nacionales e internacionales para
-                parejas, familias y grupos que buscan descubrir el mundo con
-                total tranquilidad.
-              </p>
             </div>
 
-            {/* Quote destacado — único con animación de entrada en esta sección */}
+            {/* Quote destacado */}
             <RevealOnScroll className="rounded-2xl bg-lusso-sage p-10">
               <p className="font-display font-semibold text-2xl leading-snug text-lusso-charcoal md:text-3xl">
                 &quot;No vendemos paquetes.{" "}
-                <span className="italic">Creamos experiencias </span>a la medida
-                de tus sueños, tu presupuesto y tu forma de viajar.&quot;
+                <span className="italic">Creamos experiencias </span>a la
+                medida de tus sueños, tu presupuesto y tu forma de
+                viajar.&quot;
               </p>
             </RevealOnScroll>
           </div>
@@ -96,7 +84,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Equipo */}
-      <section className="bg-lusso-charcoal py-20">
+      <section className="relative overflow-hidden bg-lusso-charcoal py-20">
         <div className="mx-auto max-w-5xl px-6">
           <RevealOnScroll className="text-center">
             <h2 className="font-display font-semibold text-3xl text-lusso-cream">
@@ -113,12 +101,34 @@ export default function NosotrosPage() {
             {equipo.map((persona, i) => (
               <div
                 key={persona.nombre}
-                className={`flex flex-col gap-8 md:items-center md:gap-12 ${
+                className={`relative flex flex-col gap-8 md:items-center md:gap-12 ${
                   i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
                 }`}
               >
+                {/* Mancha decorativa — solo junto a la foto de Julio (índice 0) */}
+{i === 0 && (
+  <>
+    <div className="pointer-events-none absolute -left-140 -top-100 z-0 hidden h-[900px] w-[900px] lg:block">
+      <Image
+        src="/images/formas/mancha.png"
+        alt=""
+        fill
+        className="object-contain"
+      />
+    </div>
+    <div className="pointer-events-none absolute -left-50 -top-65 z-[5] hidden h-80 w-80 lg:block">
+      <Image
+        src="/images/formas/estrella.png"
+        alt=""
+        fill
+        className="object-contain"
+      />
+    </div>
+  </>
+)}
+
                 {/* Foto */}
-                <div className="mx-auto shrink-0 md:mx-0">
+                <div className="relative z-10 mx-auto shrink-0 md:mx-0">
                   <div className="group relative aspect-square w-44 overflow-hidden rounded-full ring-2 ring-lusso-sage/40 transition-all duration-300 hover:ring-4 hover:ring-lusso-sage">
                     <Image
                       src={persona.foto}
@@ -130,7 +140,7 @@ export default function NosotrosPage() {
                 </div>
 
                 {/* Bio */}
-                <div className="text-center md:text-left">
+                <div className="relative z-10 text-center md:text-left">
                   <h3 className="font-display font-semibold text-2xl text-lusso-cream">
                     {persona.nombre}
                   </h3>
@@ -153,7 +163,6 @@ export default function NosotrosPage() {
           </div>
         </div>
       </section>
-
 
       <FAQ />
 

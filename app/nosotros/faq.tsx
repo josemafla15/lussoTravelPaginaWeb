@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
@@ -91,8 +92,19 @@ export default function FAQ() {
   const faqsAMostrar = verTodas ? faqs : faqs.slice(0, VISIBLES_INICIAL);
 
   return (
-    <section className="bg-lusso-cream py-20">
-      <div className="mx-auto max-w-3xl px-6">
+    <section className="relative overflow-hidden bg-lusso-cream py-20">
+      {/* Swirl decorativo — esquina superior derecha */}
+      <div className="pointer-events-none absolute -right-7 -top-60 hidden h-230 w-200 lg:block">
+        <Image
+          src="/images/formas/mancha.png"
+          alt=""
+          fill
+          className="object-contain"
+        />
+      </div>
+
+
+      <div className="relative mx-auto max-w-3xl px-6">
         <RevealOnScroll>
           <h2 className="text-center font-display font-semibold text-3xl text-lusso-charcoal md:text-4xl">
             Preguntas <span className="italic">frecuentes</span>
@@ -147,7 +159,7 @@ export default function FAQ() {
             </button>
           </div>
         )}
-        
+
         {verTodas && (
           <div className="mt-8 text-center">
             <button

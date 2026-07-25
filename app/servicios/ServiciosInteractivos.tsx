@@ -48,7 +48,17 @@ export default function ServiciosInteractivos() {
 
           {/* Columna derecha: imagen + card flotante */}
           <div className="relative min-h-[560px]">
-            <div className="absolute inset-0 overflow-hidden rounded-2xl">
+            {/* Mancha decorativa — detrás de la imagen, asomándose en la esquina */}
+            <div className="pointer-events-none absolute -right-90 -top-37 z-0 h-[900px] w-[900px]">
+  <Image
+    src="/images/formas/mancha.png"
+    alt=""
+    fill
+    className="object-contain"
+  />
+</div>
+
+            <div className="absolute inset-0 z-10 overflow-hidden rounded-2xl">
               <Image
                 key={activo.id}
                 src={activo.imagen}
@@ -59,7 +69,7 @@ export default function ServiciosInteractivos() {
             </div>
 
             {/* Card flotante */}
-            <div className="absolute -left-16 bottom-10 w-100 rounded-2xl bg-lusso-cream/60 p-8 shadow-xl backdrop-blur-md">
+            <div className="absolute -left-16 bottom-10 z-20 w-100 rounded-2xl bg-lusso-cream/60 p-8 shadow-xl backdrop-blur-md">
               <h3 className="font-display font-semibold text-2xl text-lusso-charcoal">
                 {activo.titulo}
               </h3>

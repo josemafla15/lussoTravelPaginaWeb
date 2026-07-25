@@ -47,8 +47,17 @@ export default function Resenas() {
   const anterior = () => cambiar(-1);
 
   return (
-    <section className="bg-lusso-blue py-24">
-      <div className="mx-auto max-w-4xl px-6 text-center">
+    <section className="relative overflow-hidden bg-lusso-blue py-24">
+      {/* <div className="pointer-events-none absolute right-8 bottom-4 hidden h-56 w-56 lg:block">
+  <Image
+    src="/images/svgs/image2.png"
+    alt=""
+    fill
+    className="object-contain"
+  />
+</div> */}
+
+      <div className="relative mx-auto max-w-4xl px-6 text-center">
         <h2 className="font-display font-semibold text-3xl text-lusso-charcoal md:text-4xl">
           Lo que dicen nuestros <span className="italic">viajeros</span>
         </h2>

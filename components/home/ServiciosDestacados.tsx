@@ -5,8 +5,28 @@ import RevealOnScroll from "@/components/ui/RevealOnScroll";
 
 export default function ServiciosDestacados() {
   return (
-    <section className="flex min-h-screen items-center bg-lusso-charcoal py-20">
-      <div className="mx-auto w-full max-w-6xl px-6">
+    <section className="relative overflow-hidden bg-lusso-charcoal py-20">
+      {/* Estrella — esquina superior izquierda
+      <div className="pointer-events-none absolute left-8 top-4 hidden h-64 w-64 lg:block">
+        <Image
+          src="/images/formas/estrella.png"
+          alt=""
+          fill
+          className="object-contain"
+        />
+      </div> */}
+
+      {/* Swirl — esquina inferior derecha */}
+      <div className="pointer-events-none absolute -right-30 -bottom-120 hidden h-[800px] w-[800px] lg:block">
+        <Image
+          src="/images/formas/swirl_transparente.png"
+          alt=""
+          fill
+          className="object-contain"
+        />
+      </div>
+
+      <div className="relative mx-auto w-full max-w-6xl px-6">
         {/* Encabezado */}
         <RevealOnScroll>
           <div className="mb-12 text-center">
