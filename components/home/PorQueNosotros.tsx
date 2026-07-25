@@ -59,14 +59,14 @@ export default function PorQueNosotros() {
         <RevealOnScroll delay={0.15}>
           <div className="relative mt-14 overflow-hidden rounded-2xl bg-lusso-sage px-8 py-10 text-center">
             {/* Asset — visible en mobile, centrado arriba */}
-            <div className="relative mx-auto mb-4 h-24 w-24 lg:hidden">
-              <Image
-                src="/images/assets/asset_03.png"
-                alt=""
-                fill
-                className="object-contain"
-              />
-            </div>
+<div className="relative mx-auto mb-4 h-40 w-40 lg:hidden">
+  <Image
+    src="/images/assets/asset_03.png"
+    alt=""
+    fill
+    className="object-contain"
+  />
+</div>
 
             {/* Asset decorativo al lado derecho — solo desktop */}
             <div className="pointer-events-none absolute -right-6 top-1/2 hidden h-76 w-76 -translate-y-1/2 lg:block">

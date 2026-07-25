@@ -55,7 +55,7 @@ export default function Navbar() {
           aria-label="Ir al inicio"
           className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-[60%] md:static md:translate-x-0 md:translate-y-0"
         >
-          <div className="relative h-20 w-52 md:h-32 md:w-80 md:-translate-y-1.5 md:scale-125">
+          <div className="relative h-20 w-52 md:h-32 md:w-80">
             <Image
               src="/images/brand/logotipo3.png"
               alt="Lusso Travel"

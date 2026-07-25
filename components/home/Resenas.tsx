@@ -77,9 +77,9 @@ export default function Resenas() {
           </p>
 
           {/* Asset — visible en mobile, centrado debajo */}
-          <div className="relative mx-auto mt-6 h-20 w-20 lg:hidden">
-            <Image src={resena.asset} alt="" fill className="object-contain" />
-          </div>
+<div className="relative mx-auto mt-6 h-36 w-36 lg:hidden">
+  <Image src={resena.asset} alt="" fill className="object-contain" />
+</div>
         </div>
 
         {/* Navegación + asset desktop */}
