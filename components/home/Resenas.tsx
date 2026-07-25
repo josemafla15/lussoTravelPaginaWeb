@@ -54,7 +54,7 @@ export default function Resenas() {
         </h2>
 
         {/* Testimonio — desplazamiento horizontal */}
-        <div ref={contenidoRef} className="mt-12 flex min-h-[480px] flex-col justify-center md:min-h-[280px]">
+        <div ref={contenidoRef} className="mt-12 flex min-h-[650px] flex-col justify-center md:min-h-[280px]">
           <div className="flex justify-center gap-1">
             {Array.from({ length: resena.calificacion }).map((_, i) => (
               <Star
@@ -77,9 +77,9 @@ export default function Resenas() {
           </p>
 
           {/* Asset — visible en mobile, centrado debajo */}
-<div className="relative mx-auto mt-6 h-36 w-36 lg:hidden">
-  <Image src={resena.asset} alt="" fill className="object-contain" />
-</div>
+          <div className="relative mx-auto mt-6 h-36 w-36 lg:hidden">
+            <Image src={resena.asset} alt="" fill className="object-contain" />
+          </div>
         </div>
 
         {/* Navegación + asset desktop */}
