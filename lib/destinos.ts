@@ -227,11 +227,11 @@ export const destinos: Destino[] = [
     descripcion:
       "El romance, el arte y la gastronomía en su máxima expresión. De la icónica París a la Riviera Francesa.",
     imperdibles: [
-      { nombre: "París", imagen: "/images/destinos/paris.jpg" },
-      { nombre: "Niza", imagen: "/images/destinos/niza.jpg" },
+      { nombre: "París", imagen: "/images/destinos/paris.webp" },
+      { nombre: "Niza", imagen: "/images/destinos/niza.webp" },
     ],
     frase: "Descubra la elegancia francesa, entre la capital del amor y la costa mediterránea.",
-    imagen: "/images/destinos/francia.jpg",
+    imagen: "/images/destinos/francia.webp",
   },
   {
     id: 14,
@@ -242,8 +242,8 @@ export const destinos: Destino[] = [
     descripcion:
       "Historia, arte y una energía única. De la capital madrileña a la vibrante Barcelona.",
     imperdibles: [
-      { nombre: "Madrid", imagen: "/images/destinos/madrid.jpg" },
-      { nombre: "Barcelona", imagen: "/images/destinos/barcelona.jpg" },
+      { nombre: "Madrid", imagen: "/images/destinos/madrid.webp" },
+      { nombre: "Barcelona", imagen: "/images/destinos/barcelona.webp" },
     ],
     frase: "Viva la pasión española entre museos, arquitectura y vida nocturna inolvidable.",
     imagen: "/images/destinos/espana.webp",
@@ -257,11 +257,11 @@ export const destinos: Destino[] = [
     descripcion:
       "Cuna del arte y la historia. De la eterna Roma a los canales de Venecia.",
     imperdibles: [
-      { nombre: "Roma", imagen: "/images/destinos/roma.jpg" },
-      { nombre: "Venecia", imagen: "/images/destinos/venecia.jpg" },
+      { nombre: "Roma", imagen: "/images/destinos/roma.webp" },
+      { nombre: "Venecia", imagen: "/images/destinos/venecia.webp" },
     ],
     frase: "Enamórese de Italia, donde cada calle cuenta una historia milenaria.",
-    imagen: "/images/destinos/italia.jpg",
+    imagen: "/images/destinos/italia.webp",
   },
   {
     id: 16,
@@ -272,8 +272,8 @@ export const destinos: Destino[] = [
     descripcion:
       "Encanto costero y tradición. De la colorida Lisboa a la histórica Oporto.",
     imperdibles: [
-      { nombre: "Lisboa", imagen: "/images/destinos/lisboa.jpg" },
-      { nombre: "Oporto", imagen: "/images/destinos/oporto.jpg" },
+      { nombre: "Lisboa", imagen: "/images/destinos/lisboa.webp" },
+      { nombre: "Oporto", imagen: "/images/destinos/oporto.webp" },
     ],
     frase: "Descubra Portugal, entre miradores, fado y el sabor del Atlántico.",
     imagen: "/images/destinos/portugal2.jpg",
@@ -288,10 +288,10 @@ export const destinos: Destino[] = [
       "Historia real y modernidad. De la icónica Londres a la escocesa Edimburgo.",
     imperdibles: [
       { nombre: "Londres", imagen: "/images/destinos/londres.jpg" },
-      { nombre: "Edimburgo", imagen: "/images/destinos/edimburgo.jpg" },
+      { nombre: "Edimburgo", imagen: "/images/destinos/edimburgo.webp" },
     ],
     frase: "Explore el Reino Unido, entre castillos, museos y paisajes de leyenda.",
-    imagen: "/images/destinos/reinoUnido2.jpg",
+    imagen: "/images/destinos/reinoUnido2.webp",
   },
   {
     id: 18,
@@ -303,10 +303,10 @@ export const destinos: Destino[] = [
       "Historia, cerveza y arquitectura imponente. De la vibrante Berlín a la bávara Múnich.",
     imperdibles: [
       { nombre: "Berlín", imagen: "/images/destinos/berlin.jpg" },
-      { nombre: "Múnich", imagen: "/images/destinos/munich.jpg" },
+      { nombre: "Múnich", imagen: "/images/destinos/munich.webp" },
     ],
     frase: "Viva Alemania entre historia, cultura y tradición centroeuropea.",
-    imagen: "/images/destinos/alemania.jpg",
+    imagen: "/images/destinos/alemania.webp",
   },
   {
     id: 19,
@@ -317,10 +317,10 @@ export const destinos: Destino[] = [
     descripcion:
       "Canales, bicicletas y tulipanes. Ámsterdam la convierte en una experiencia única.",
     imperdibles: [
-      { nombre: "Ámsterdam", imagen: "/images/destinos/amsterdam.jpg" },
+      { nombre: "Ámsterdam", imagen: "/images/destinos/amsterdam.webp" },
     ],
     frase: "Recorra Ámsterdam, ciudad de canales, arte y bicicletas.",
-    imagen: "/images/destinos/paisesBajos.jpg",
+    imagen: "/images/destinos/paisesBajos.webp",
   },
   {
     id: 20,
@@ -331,11 +331,11 @@ export const destinos: Destino[] = [
     descripcion:
       "Cuna de la civilización occidental. De la histórica Atenas a la paradisíaca Santorini.",
     imperdibles: [
-      { nombre: "Atenas", imagen: "/images/destinos/atenas.jpg" },
-      { nombre: "Santorini", imagen: "/images/destinos/santorini.jpg" },
+      { nombre: "Atenas", imagen: "/images/destinos/atenas.webp" },
+      { nombre: "Santorini", imagen: "/images/destinos/santorini.webp" },
     ],
     frase: "Descubra Grecia, entre ruinas milenarias y atardeceres inolvidables.",
-    imagen: "/images/destinos/grecia.jpg",
+    imagen: "/images/destinos/grecia.webp",
   },
   {
     id: 21,
@@ -346,10 +346,10 @@ export const destinos: Destino[] = [
     descripcion:
       "Naturaleza nórdica y auroras boreales. De la moderna Helsinki a la mágica Rovaniemi.",
     imperdibles: [
-      { nombre: "Helsinki", imagen: "/images/destinos/helsinki.jpg" },
-      { nombre: "Rovaniemi", imagen: "/images/destinos/rovaniemi.jpg" },
+      { nombre: "Helsinki", imagen: "/images/destinos/helsinki.webp" },
+      { nombre: "Rovaniemi", imagen: "/images/destinos/rovaniemi.webp" },
     ],
     frase: "Viva la magia nórdica de Finlandia, tierra de auroras y de Papá Noel.",
-    imagen: "/images/destinos/finlandia.jpg",
+    imagen: "/images/destinos/finlandia.webp",
   },
 ];
