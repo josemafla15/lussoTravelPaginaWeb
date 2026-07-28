@@ -246,7 +246,7 @@ export const destinos: Destino[] = [
       { nombre: "Barcelona", imagen: "/images/destinos/barcelona.jpg" },
     ],
     frase: "Viva la pasión española entre museos, arquitectura y vida nocturna inolvidable.",
-    imagen: "/images/destinos/espana.jpg",
+    imagen: "/images/destinos/espana.webp",
   },
   {
     id: 15,
