@@ -53,7 +53,7 @@ export default function Navbar() {
         <Link
   href="/"
   aria-label="Ir al inicio"
-  className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-[45%] md:static md:translate-x-0 md:translate-y-0"
+  className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-[52%] md:static md:translate-x-0 md:translate-y-0"
 >
           <div className="relative h-20 w-52 md:h-32 md:w-80">
             <Image
