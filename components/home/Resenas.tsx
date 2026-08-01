@@ -5,6 +5,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { resenas } from "@/lib/resenas";
+import GaleriaResena from "@/components/home/GaleriaResena";
 
 export default function Resenas() {
   const [index, setIndex] = useState(0);
@@ -12,9 +13,10 @@ export default function Resenas() {
   const contenidoRef = useRef<HTMLDivElement>(null);
 
   const resena = resenas[index];
+  const hayVarias = resenas.length > 1;
 
   const cambiar = (direccion: 1 | -1) => {
-    if (animando) return;
+    if (animando || !hayVarias) return;
     setAnimando(true);
 
     const el = contenidoRef.current;
@@ -47,23 +49,18 @@ export default function Resenas() {
   const anterior = () => cambiar(-1);
 
   return (
-    <section className="relative overflow-hidden bg-lusso-blue py-24">
-      {/* <div className="pointer-events-none absolute right-8 bottom-4 hidden h-56 w-56 lg:block">
-  <Image
-    src="/images/svgs/image2.png"
-    alt=""
-    fill
-    className="object-contain"
-  />
-</div> */}
-
-      <div className="relative mx-auto max-w-4xl px-6 text-center">
+    <section className="bg-lusso-blue py-24">
+      <div className="mx-auto max-w-4xl px-6 text-center">
         <h2 className="font-display font-semibold text-3xl text-lusso-charcoal md:text-4xl">
           Lo que dicen nuestros <span className="italic">viajeros</span>
         </h2>
 
         {/* Testimonio — desplazamiento horizontal */}
         <div ref={contenidoRef} className="mt-12 flex min-h-[650px] flex-col justify-center md:min-h-[280px]">
+          {resena.fotos && resena.fotos.length > 0 && (
+            <GaleriaResena fotos={resena.fotos} />
+          )}
+
           <div className="flex justify-center gap-1">
             {Array.from({ length: resena.calificacion }).map((_, i) => (
               <Star
@@ -91,31 +88,40 @@ export default function Resenas() {
           </div>
         </div>
 
-        {/* Navegación + asset desktop */}
-        <div className="relative mt-10 flex items-center justify-center gap-6">
-          <button
-            onClick={anterior}
-            aria-label="Reseña anterior"
-            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-lusso-charcoal/30 text-lusso-charcoal transition-colors hover:bg-lusso-charcoal hover:text-lusso-cream active:scale-95"
-          >
-            <ChevronLeft size={18} />
-          </button>
-          <span className="text-sm text-lusso-charcoal/60">
-            {index + 1} / {resenas.length}
-          </span>
-          <button
-            onClick={siguiente}
-            aria-label="Siguiente reseña"
-            className="relative flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-lusso-charcoal/30 text-lusso-charcoal transition-colors hover:bg-lusso-charcoal hover:text-lusso-cream active:scale-95"
-          >
-            <ChevronRight size={18} />
+        {/* Navegación + asset desktop — solo si hay más de una reseña */}
+        {hayVarias ? (
+          <div className="relative mt-10 flex items-center justify-center gap-6">
+            <button
+              onClick={anterior}
+              aria-label="Reseña anterior"
+              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-lusso-charcoal/30 text-lusso-charcoal transition-colors hover:bg-lusso-charcoal hover:text-lusso-cream active:scale-95"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <span className="text-sm text-lusso-charcoal/60">
+              {index + 1} / {resenas.length}
+            </span>
+            <button
+              onClick={siguiente}
+              aria-label="Siguiente reseña"
+              className="relative flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-lusso-charcoal/30 text-lusso-charcoal transition-colors hover:bg-lusso-charcoal hover:text-lusso-cream active:scale-95"
+            >
+              <ChevronRight size={18} />
 
-            {/* Asset pegado al botón — solo desktop */}
-            <div className="pointer-events-none absolute left-full top-1/2 ml-4 hidden h-64 w-64 -translate-y-1/2 lg:block">
+              {/* Asset pegado al botón — solo desktop */}
+              <div className="pointer-events-none absolute left-full top-1/2 ml-4 hidden h-64 w-64 -translate-y-1/2 lg:block">
+                <Image src={resena.asset} alt="" fill className="object-contain" />
+              </div>
+            </button>
+          </div>
+        ) : (
+          // Con una sola reseña: el asset se muestra igual, sin controles de navegación
+          <div className="relative mt-10 hidden justify-center lg:flex">
+            <div className="relative h-64 w-64">
               <Image src={resena.asset} alt="" fill className="object-contain" />
             </div>
-          </button>
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );

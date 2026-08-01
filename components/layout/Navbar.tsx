@@ -51,10 +51,10 @@ export default function Navbar() {
 
         {/* Logotipo — posicionado absoluto en mobile, en flujo normal en desktop */}
         <Link
-          href="/"
-          aria-label="Ir al inicio"
-          className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-[60%] md:static md:translate-x-0 md:translate-y-0"
-        >
+  href="/"
+  aria-label="Ir al inicio"
+  className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-[45%] md:static md:translate-x-0 md:translate-y-0"
+>
           <div className="relative h-20 w-52 md:h-32 md:w-80">
             <Image
               src="/images/brand/logotipo3.png"
@@ -95,6 +95,15 @@ export default function Navbar() {
                       onClick={() => setDestinosOpen(false)}
                     >
                       Internacionales
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/destinos/experiencias"
+                      className="block px-4 py-2 hover:text-lusso-sage transition-colors"
+                      onClick={() => setDestinosOpen(false)}
+                    >
+                      Experiencias
                     </Link>
                   </li>
                 </ul>

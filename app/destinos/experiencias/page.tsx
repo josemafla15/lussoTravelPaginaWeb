@@ -1,4 +1,4 @@
-import ExperienciasExplorer from "../ExperienciasExplorer";
+import ExperienciasExplorer from "@/components/destinos/ExperienciasExplorer";
 import CtaBanner from "@/components/home/ctaBannet";
 
 export const metadata = {

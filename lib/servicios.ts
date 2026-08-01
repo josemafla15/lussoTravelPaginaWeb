@@ -10,6 +10,15 @@ export type Servicio = {
 export const servicios: Servicio[] = [
   {
     id: 1,
+    slug: "paquetes-a-tu-medida",
+    titulo: "Paquetes a tu medida",
+    descripcion:
+      "Ningún viaje es igual a otro. Diseñamos cada itinerario desde cero, según tu presupuesto, tus fechas y la forma en que quieres vivir tu viaje.",
+    imagen: "/images/servicios/aTuMedida.jpg",
+    destacado: true,
+  },
+  {
+    id: 2,
     slug: "luna-de-miel",
     titulo: "Luna de miel",
     descripcion:
@@ -18,7 +27,7 @@ export const servicios: Servicio[] = [
     destacado: true,
   },
   {
-    id: 2,
+    id: 3,
     slug: "viajes-en-familia",
     titulo: "Viajes en familia",
     descripcion:
@@ -27,16 +36,25 @@ export const servicios: Servicio[] = [
     destacado: true,
   },
   {
-    id: 3,
+  id: 4, 
+  slug: "tour-por-europa",
+  titulo: "Tour por Europa",
+  descripcion:
+    "Circuitos de 7 a 20+ días por las capitales y rincones más encantadores del continente europeo.",
+  imagen: "/images/servicios/europa.jpg",
+  destacado: false,
+},
+  {
+    id: 5,
     slug: "planes-para-empresa",
     titulo: "Planes para empresa",
     descripcion:
       "Congresos, incentivos y team building con toda la logística resuelta para tu equipo.",
     imagen: "/images/servicios/empresa.jpg",
-    destacado: true,
+    destacado: false,
   },
   {
-    id: 4,
+    id: 6,
     slug: "pasadias",
     titulo: "Pasadías",
     descripcion:
@@ -44,17 +62,17 @@ export const servicios: Servicio[] = [
     imagen: "/images/servicios/pasadia.jpg",
     destacado: false,
   },
+  // {
+  //   id: 7,
+  //   slug: "circuitos-por-el-mundo",
+  //   titulo: "Circuitos por el mundo",
+  //   descripcion:
+  //     "Rutas de varios destinos en un solo viaje. Europa, Asia y más, con cada detalle coordinado.",
+  //   imagen: "/images/servicios/europa1.jpg",
+  //   destacado: false,
+  // },
   {
-    id: 5,
-    slug: "circuitos-por-el-mundo",
-    titulo: "Circuitos por el mundo",
-    descripcion:
-      "Rutas de varios destinos en un solo viaje. Europa, Asia y más, con cada detalle coordinado.",
-    imagen: "/images/servicios/europa1.jpg",
-    destacado: false,
-  },
-  {
-    id: 6,
+    id: 7,
     slug: "aventura",
     titulo: "Aventura",
     descripcion:
@@ -63,7 +81,7 @@ export const servicios: Servicio[] = [
     destacado: false,
   },
   {
-  id: 7,
+  id: 8,
   slug: "festivales",
   titulo: "Festivales",
   descripcion:
@@ -72,7 +90,7 @@ export const servicios: Servicio[] = [
   destacado: false,
   },
   {
-  id: 8,
+  id: 9,
   slug: "planes-para-amigos",
   titulo: "Planes para amigos",
   descripcion:

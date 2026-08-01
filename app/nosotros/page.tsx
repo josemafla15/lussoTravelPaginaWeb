@@ -5,17 +5,17 @@ import FAQ from "./faq";
 
 const equipo = [
   {
-    nombre: "Julio Insuasty",
-    cargo: "Cofundador de Lusso Travel",
-    foto: "/images/nosotros/julio.jpeg",
-    posicion: "object-center",
-    bio: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
-    ],
-  },
+  nombre: "Julio Insuasty",
+  cargo: "Cofundador de Lusso Travel",
+  foto: "/images/nosotros/julio.jpeg",
+  posicion: "object-center",
+  bio: [
+    "Para mí, cada viaje empieza mucho antes del primer vuelo: nace en la conversación donde escuchamos lo que alguien realmente sueña vivir. Creo que un buen viaje no se vende, se construye a la medida de quien lo va a disfrutar.",
+    "Mi destino soñado es recorrer la Patagonia, un lugar donde la naturaleza se muestra en su forma más pura y silenciosa. Es el tipo de experiencia que me recuerda por qué elegí dedicarme a esto: la posibilidad de que un viaje transforme la manera en que ves el mundo.",
+    "Como cofundador de Lusso Travel, mi labor es asegurarme de que cada cliente sienta un acompañamiento real, no solo una transacción. Cuido que cada detalle logístico esté resuelto para que el viajero solo tenga que preocuparse por disfrutar.",
+    "Mi propósito es que cada persona que confía en nosotros sienta que su viaje fue diseñado exclusivamente para ella, con la tranquilidad de saber que hay un equipo respaldándola en cada paso del camino.",
+  ],
+},
   {
     nombre: "Luis Solarte",
     cargo: "Cofundador de Lusso Travel",
@@ -73,7 +73,7 @@ export default function NosotrosPage() {
             {/* Quote destacado */}
             <RevealOnScroll className="rounded-2xl bg-lusso-sage p-10">
               <p className="font-display font-semibold text-2xl leading-snug text-lusso-charcoal md:text-3xl">
-                &quot;No vendemos paquetes.{" "}
+               
                 <span className="italic">Creamos experiencias </span>a la
                 medida de tus sueños, tu presupuesto y tu forma de
                 viajar.&quot;
@@ -170,7 +170,7 @@ export default function NosotrosPage() {
       <section className="bg-lusso-cream py-16">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <h2 className="font-display font-semibold text-2xl text-lusso-charcoal">
-            Hoteles con los que <span className="italic">trabajamos</span>
+            Algunos de los hoteles con los que <span className="italic">trabajamos</span>
           </h2>
           <RevealOnScroll
             stagger
@@ -181,7 +181,7 @@ export default function NosotrosPage() {
               { nombre: "RIU Hotels & Resorts", logo: "/images/nosotros/riu.svg", tam: "h-10 w-20" },
               { nombre: "Hard Rock Hotels", logo: "/images/nosotros/hard.jpg", tam: "h-12 w-20" },
               { nombre: "Grupo Xcaret", logo: "/images/nosotros/xcaret.png", tam: "h-10 w-24" },
-              { nombre: "OSH Hotel Cartagena", logo: "/images/nosotros/osh.jpg", tam: "h-10 w-20" },
+              { nombre: "OSH Hotel Cartagena", logo: "/images/nosotros/osh.png", tam: "h-20 w-30" },
             ].map((hotel) => (
               <div
                 key={hotel.nombre}

@@ -160,7 +160,7 @@ function ParqueCard({ parque }: { parque: Parque }) {
         <p className="font-display font-semibold text-base text-lusso-cream">
           {parque.nombre}
         </p>
-        <p className="mt-1 text-xs leading-snug text-lusso-cream/80 line-clamp-3">
+        <p className="mt-1 text-xs leading-snug text-lusso-cream/80 line-clamp-5">
           {parque.descripcion}
         </p>
       </div>

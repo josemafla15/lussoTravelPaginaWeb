@@ -186,23 +186,6 @@ export const destinos: Destino[] = [
   },
   {
     id: 11,
-    slug: "tour-por-europa",
-    nombre: "Tour por Europa",
-    tipo: "internacional",
-    categorias: ["Cultura", "Ciudad"],
-    descripcion:
-      "Circuitos de 7 a 20+ días por las capitales y rincones más encantadores del continente.",
-    imperdibles: [
-      { nombre: "Francia" },
-      { nombre: "Italia" },
-      { nombre: "España" },
-    ],
-    frase:
-      "No importa cuál sea el viaje de sus sueños, siempre habrá un circuito diseñado para usted.",
-    imagen: "/images/destinos/europa.webp",
-  },
-  {
-    id: 12,
     slug: "japon",
     nombre: "Japón",
     tipo: "internacional",
@@ -219,7 +202,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/japon.webp",
   },
   {
-    id: 13,
+    id: 12,
     slug: "francia",
     nombre: "Francia",
     tipo: "internacional",
@@ -234,7 +217,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/francia.webp",
   },
   {
-    id: 14,
+    id: 13,
     slug: "espana",
     nombre: "España",
     tipo: "internacional",
@@ -249,7 +232,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/espana.webp",
   },
   {
-    id: 15,
+    id: 14,
     slug: "italia",
     nombre: "Italia",
     tipo: "internacional",
@@ -264,7 +247,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/italia.webp",
   },
   {
-    id: 16,
+    id: 15,
     slug: "portugal",
     nombre: "Portugal",
     tipo: "internacional",
@@ -279,7 +262,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/portugal2.jpg",
   },
   {
-    id: 17,
+    id: 16,
     slug: "reino-unido",
     nombre: "Reino Unido",
     tipo: "internacional",
@@ -294,7 +277,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/reinoUnido2.webp",
   },
   {
-    id: 18,
+    id: 17,
     slug: "alemania",
     nombre: "Alemania",
     tipo: "internacional",
@@ -309,7 +292,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/alemania.webp",
   },
   {
-    id: 19,
+    id: 18,
     slug: "paises-bajos",
     nombre: "Países Bajos",
     tipo: "internacional",
@@ -323,7 +306,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/paisesBajos.webp",
   },
   {
-    id: 20,
+    id: 19,
     slug: "grecia",
     nombre: "Grecia",
     tipo: "internacional",
@@ -338,7 +321,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/grecia.webp",
   },
   {
-    id: 21,
+    id: 20,
     slug: "finlandia",
     nombre: "Finlandia",
     tipo: "internacional",
