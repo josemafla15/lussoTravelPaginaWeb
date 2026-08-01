@@ -164,6 +164,11 @@ export default function Navbar() {
                       Internacionales
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/destinos/experiencias" onClick={() => setMobileOpen(false)}>
+                      Experiencias
+                    </Link>
+                  </li>
                 </ul>
               )}
             </li>
