@@ -32,7 +32,7 @@ export default function PorQueNosotros() {
         {/* Encabezado */}
 <RevealOnScroll>
   <div className="mb-14 text-center">
-    <div className="relative mx-auto -mt-20 -mb-10 h-100 w-100">
+    <div className="relative mx-auto -mt-20 -mb-10 h-24 w-24 md:h-100 md:w-100">
   <Image
     src="/images/brand/logoEstrella.png"
     alt=""
