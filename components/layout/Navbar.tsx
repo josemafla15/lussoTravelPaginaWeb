@@ -51,10 +51,10 @@ export default function Navbar() {
 
         {/* Logotipo — posicionado absoluto en mobile, en flujo normal en desktop */}
         <Link
-  href="/"
-  aria-label="Ir al inicio"
-  className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-[52%] md:static md:translate-x-0 md:translate-y-0"
->
+          href="/"
+          aria-label="Ir al inicio"
+          className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-[52%] md:static md:translate-x-0 md:translate-y-0"
+        >
           <div className="relative h-20 w-52 md:h-32 md:w-80">
             <Image
               src="/images/brand/logotipo3.png"
@@ -66,7 +66,7 @@ export default function Navbar() {
         </Link>
 
         {/* Links desktop */}
-        <ul className="hidden md:flex items-center gap-10 text-lg font-semibold text-lusso-cream">
+        <ul className="hidden md:flex items-center gap-10 text-2xl font-semibold text-lusso-cream">
           {/* Dropdown Destinos */}
           <li
             className="relative"
@@ -139,8 +139,8 @@ export default function Navbar() {
 
       {/* Menú mobile */}
       {mobileOpen && (
-        <div className="md:hidden bg-lusso-charcoal px-6 pb-6">
-          <ul className="flex flex-col gap-4 text-lusso-cream">
+        <div className="md:hidden bg-lusso-charcoal px-12 pb-12">
+          <ul className="flex flex-col gap-4 text-lg text-lusso-cream">
             <li>
               <button
                 className="flex w-full items-center justify-between"
@@ -153,7 +153,7 @@ export default function Navbar() {
                 />
               </button>
               {destinosOpen && (
-                <ul className="mt-2 ml-4 flex flex-col gap-2 text-sm text-lusso-cream/80">
+                <ul className="mt-2 ml-4 flex flex-col gap-2 text-base text-lusso-cream/80">
                   <li>
                     <Link href="/destinos/nacionales" onClick={() => setMobileOpen(false)}>
                       Nacionales
