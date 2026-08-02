@@ -34,3 +34,7 @@ body {
 .animate-fill-bar-h {
   animation: fill-bar-h 6.5s linear forwards;
 }
+
+html, body {
+  overflow-x: hidden;
+}
