@@ -13,7 +13,7 @@ export const resenas: Resena[] = [
 {
   id: 1,
   nombre: "Carolina M.",
-  destino: "San Andrés",
+  destino: "Coveñas",
   texto:
     "Tuve una experiencia excelente con Lusso Travel. El equipo fue muy atento y profesional, ayudándome a organizar cada detalle del viaje según mi presupuesto. Durante el viaje todo salió perfecto: itinerarios bien planificados y servicios de alta calidad, sin ningún inconveniente. Recomiendo esta agencia a cualquiera que quiera viajar con confianza. ¡Definitivamente volveré!",
   calificacion: 5,
