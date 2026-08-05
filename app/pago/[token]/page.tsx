@@ -53,6 +53,7 @@ export default function PaginaPago() {
   const [cargando, setCargando] = useState(true);
   const [widgetListo, setWidgetListo] = useState(false);
   const [procesando, setProcesando] = useState(false);
+  const [errorWidget, setErrorWidget] = useState(false);
 
   useEffect(() => {
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
@@ -65,6 +66,14 @@ export default function PaginaPago() {
       .catch((e) => setError(e instanceof Error ? e.message : "Error desconocido"))
       .finally(() => setCargando(false));
   }, [token]);
+
+  useEffect(() => {
+    if (widgetListo) return;
+    const timeout = setTimeout(() => {
+      if (!widgetListo) setErrorWidget(true);
+    }, 8000);
+    return () => clearTimeout(timeout);
+  }, [widgetListo]);
 
   function abrirCheckout() {
     if (!datos || !window.WidgetCheckout) return;
@@ -153,8 +162,21 @@ export default function PaginaPago() {
           disabled={!widgetListo || procesando}
           className="w-full bg-lusso-charcoal text-lusso-cream font-body font-medium py-3 rounded-lg disabled:opacity-50"
         >
-          {procesando ? "Procesando..." : "Pagar ahora"}
+          {procesando
+            ? "Procesando..."
+            : widgetListo
+            ? "Pagar ahora"
+            : errorWidget
+            ? "No disponible"
+            : "Preparando pago..."}
         </button>
+
+        {errorWidget && (
+          <p className="text-center text-xs text-red-600 font-body mt-3">
+            No pudimos cargar el sistema de pagos. Intenta recargar la página o
+            contacta a tu asesor de Lusso.
+          </p>
+        )}
 
         <p className="text-center text-xs text-lusso-charcoal/50 font-body mt-4">
           Pago seguro procesado por Wompi
