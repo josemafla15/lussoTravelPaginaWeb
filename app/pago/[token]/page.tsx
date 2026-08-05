@@ -52,7 +52,6 @@ export default function PaginaPago() {
   const [error, setError] = useState<string | null>(null);
   const [cargando, setCargando] = useState(true);
   const [widgetListo, setWidgetListo] = useState(false);
-  const [procesando, setProcesando] = useState(false);
   const [errorWidget, setErrorWidget] = useState(false);
 
   useEffect(() => {
@@ -77,7 +76,6 @@ export default function PaginaPago() {
 
   function abrirCheckout() {
     if (!datos || !window.WidgetCheckout) return;
-    setProcesando(true);
 
     const checkout = new window.WidgetCheckout({
       currency: datos.widget.currency,
@@ -89,10 +87,12 @@ export default function PaginaPago() {
     });
 
     checkout.open((result: WompiTransactionResult) => {
-      setProcesando(false);
       if (result?.transaction?.status === "APPROVED") {
         window.location.href = datos.widget.redirect_url;
       }
+      // Si el cliente cierra el modal sin completar el pago, no hacemos
+      // nada especial — el botón ya está disponible de nuevo, porque
+      // nunca lo bloqueamos esperando este callback.
     });
   }
 
@@ -159,12 +159,10 @@ export default function PaginaPago() {
 
         <button
           onClick={abrirCheckout}
-          disabled={!widgetListo || procesando}
+          disabled={!widgetListo}
           className="w-full bg-lusso-charcoal text-lusso-cream font-body font-medium py-3 rounded-lg disabled:opacity-50"
         >
-          {procesando
-            ? "Procesando..."
-            : widgetListo
+          {widgetListo
             ? "Pagar ahora"
             : errorWidget
             ? "No disponible"
