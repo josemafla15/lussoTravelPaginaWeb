@@ -6,13 +6,15 @@ import { useParams } from "next/navigation";
 export default function Confirmacion() {
   const { token } = useParams<{ token: string }>();
   const [estado, setEstado] = useState<string | null>(null);
+  const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
     fetch(`${backendUrl}/pago/${token}/`)
       .then((res) => res.json())
       .then((json) => setEstado(json.estado ?? null))
-      .catch(() => setEstado(null));
+      .catch(() => setEstado(null))
+      .finally(() => setCargando(false));
   }, [token]);
 
   function mensaje() {
@@ -28,14 +30,23 @@ export default function Confirmacion() {
       case "anulado":
         return "Este pago fue anulado.";
       default:
-        return "Estamos verificando el estado de tu pago.";
+        return "No pudimos verificar el estado de tu pago. Contacta a tu asesor de Lusso.";
     }
   }
 
   function titulo() {
     if (estado === "declinado" || estado === "error") return "Algo salió mal";
     if (estado === "pendiente") return "¡Casi listo!";
-    return "¡Gracias!";
+    if (estado === "aprobado") return "¡Gracias!";
+    return "Verificando...";
+  }
+
+  if (cargando) {
+    return (
+      <div className="min-h-screen bg-lusso-charcoal flex items-center justify-center px-6">
+        <p className="text-lusso-cream font-body">Confirmando tu pago...</p>
+      </div>
+    );
   }
 
   return (

@@ -87,12 +87,13 @@ export default function PaginaPago() {
     });
 
     checkout.open((result: WompiTransactionResult) => {
-      if (result?.transaction?.status === "APPROVED") {
+      const status = result?.transaction?.status;
+      if (status === "APPROVED" || status === "DECLINED" || status === "ERROR") {
         window.location.href = datos.widget.redirect_url;
       }
-      // Si el cliente cierra el modal sin completar el pago, no hacemos
-      // nada especial — el botón ya está disponible de nuevo, porque
-      // nunca lo bloqueamos esperando este callback.
+      // Si no hay transaction en absoluto (cerró el modal sin completar
+      // ningún intento), no redirige — se queda en la página de pago,
+      // lista para reintentar.
     });
   }
 
