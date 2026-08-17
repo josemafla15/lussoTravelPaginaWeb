@@ -40,38 +40,19 @@ export default function DestinoExplorer({ tipo }: Props) {
     );
   }, []);
 
-  useEffect(() => {
-  const precargar = () => {
-    lista.forEach((d) => {
-      const img = new window.Image();
-      img.fetchPriority = "low";
-      img.src = d.imagen;
+  // Respaldo liviano: si alguien llega directo a esta página sin pasar
+// por el home (que ya precargó todo), al menos aseguramos el vecino
+// inmediato para que las flechas no salten en blanco.
+useEffect(() => {
+  const siguiente = lista[(index + 1) % lista.length];
+  const anterior = lista[(index - 1 + lista.length) % lista.length];
 
-      d.imperdibles.slice(0, 3).forEach((imp) => {
-        if (imp.imagen) {
-          const impImg = new window.Image();
-          impImg.fetchPriority = "low";
-          impImg.src = imp.imagen;
-        }
-      });
-    });
-  };
-
-  const tieneIdleCallback = typeof window.requestIdleCallback === "function";
-
-  if (document.readyState === "complete") {
-    if (tieneIdleCallback) {
-      const id = window.requestIdleCallback(precargar);
-      return () => window.cancelIdleCallback(id);
-    } else {
-      const id = window.setTimeout(precargar, 500);
-      return () => window.clearTimeout(id);
-    }
-  } else {
-    window.addEventListener("load", precargar, { once: true });
-    return () => window.removeEventListener("load", precargar);
-  }
-}, [lista]);
+  [siguiente, anterior].forEach((d) => {
+    const img = new window.Image();
+    img.fetchPriority = "low";
+    img.src = d.imagen;
+  });
+}, [index, lista]);
 
   const cambiarDestino = (direccion: 1 | -1) => {
     if (animando) return; // evita clics dobles durante la animación
