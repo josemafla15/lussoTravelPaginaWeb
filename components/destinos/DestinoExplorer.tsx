@@ -40,12 +40,14 @@ export default function DestinoExplorer({ tipo }: Props) {
     );
   }, []);
 
-  // Precarga las fotos (principal + imperdibles) de los destinos vecinos
+  // Precarga TODAS las fotos de este tipo (principal + imperdibles) apenas
+  // se monta el componente -- son ~10-20 destinos, fotos ya optimizadas a
+  // menos de 500KB cada una, así que el total es liviano. Usamos las
+  // mismas URLs crudas que <Image unoptimized> va a pedir, para que el
+  // caché del navegador realmente calce (ver por qué en el prop
+  // unoptimized más abajo).
   useEffect(() => {
-    const siguiente = lista[(index + 1) % lista.length];
-    const anterior = lista[(index - 1 + lista.length) % lista.length];
-
-    [siguiente, anterior].forEach((d) => {
+    lista.forEach((d) => {
       const img = new window.Image();
       img.src = d.imagen;
 
@@ -56,7 +58,7 @@ export default function DestinoExplorer({ tipo }: Props) {
         }
       });
     });
-  }, [index, lista]);
+  }, [lista]);
 
   const cambiarDestino = (direccion: 1 | -1) => {
     if (animando) return; // evita clics dobles durante la animación
@@ -101,8 +103,9 @@ export default function DestinoExplorer({ tipo }: Props) {
           src={destino.imagen}
           alt={destino.nombre}
           fill
+          unoptimized
           className="object-cover"
-          priority
+          priority={index === 0}
         />
 
         {/* Gradiente: vertical en mobile, lateral desde desktop */}
@@ -179,6 +182,7 @@ function ImperdibleCard({ imperdible }: { imperdible: Imperdible }) {
           src={imperdible.imagen}
           alt={imperdible.nombre}
           fill
+          unoptimized
           className={`object-cover transition-opacity duration-500 ${
             cargada ? "opacity-100" : "opacity-0"
           }`}
