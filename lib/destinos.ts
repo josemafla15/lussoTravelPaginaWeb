@@ -42,7 +42,7 @@ export const destinos: Destino[] = [
     descripcion:
       "El paraíso del Mar de los Siete Colores. Arrecifes, playas de arena blanca y excursiones inolvidables.",
     imperdibles: [
-      { nombre: "Johnny Cay", imagen: "/images/destinos/johnny.svg" },
+      { nombre: "Johnny Cay", imagen: "/images/destinos/johnny.jpg" },
       { nombre: "Acuario Natural", imagen: "/images/destinos/acuario.jpg" },
       { nombre: "Snorkel y buceo", imagen: "/images/destinos/snorkel.jpg" },
     ],

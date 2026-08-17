@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { experiencias, type Parque } from "@/lib/experiencias";
+import { WHATSAPP } from "@/lib/config";
 
 export default function ExperienciasExplorer() {
   const [index, setIndex] = useState(0);
@@ -160,9 +161,20 @@ function ParqueCard({ parque }: { parque: Parque }) {
         <p className="font-display font-semibold text-base text-lusso-cream">
           {parque.nombre}
         </p>
-        <p className="mt-1 text-xs leading-snug text-lusso-cream/80 line-clamp-5">
+        <p className="mt-1 text-xs leading-snug text-lusso-cream/80 line-clamp-4">
           {parque.descripcion}
         </p>
+        <a
+          href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
+            `Hola, me interesa viajar a ${parque.nombre}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="mt-2 inline-block rounded-full bg-lusso-sage px-4 py-1.5 text-xs font-semibold text-lusso-charcoal transition-opacity hover:opacity-90 active:scale-95"
+        >
+          Cotizar este destino
+        </a>
       </div>
     </div>
   );

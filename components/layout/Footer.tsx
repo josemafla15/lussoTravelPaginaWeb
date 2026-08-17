@@ -8,9 +8,9 @@ export default function Footer() {
   return (
     <footer className="bg-lusso-charcoal text-lusso-cream">
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-4">
+        <div className="flex flex-wrap justify-between gap-12">
           {/* Logo + tagline */}
-          <div className="md:col-span-1 flex flex-col items-center text-center">
+          <div className="flex flex-col items-center text-center">
             <div className="relative h-32 w-80">
               <Image
                 src="/images/brand/logotipo3.png"
@@ -19,7 +19,7 @@ export default function Footer() {
                 className="object-contain"
               />
             </div>
-            <p className="mt-4 text-sm text-lusso-cream/60">
+            <p className="mt-4 text-sm text-lusso-cream/60 max-w-xs">
               Viajar es crear recuerdos emocionales visualmente inolvidables.
             </p>
           </div>
@@ -48,31 +48,36 @@ export default function Footer() {
           </div>
 
           {/* Contacto + redes */}
-          <div className="mt-4 flex gap-4">
-            {/* Instagram */}
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-lusso-cream/70 hover:text-lusso-sage transition-colors"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-              </svg>
-            </a>
-            {/* WhatsApp */}
-            <a
-              href={`https://wa.me/${WHATSAPP}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-              className="text-lusso-cream/70 hover:text-lusso-sage transition-colors"
-            >
-              <MessageCircle size={20} />
-            </a>
+          <div className="flex flex-col items-start md:items-end">
+            <h4 className="font-display font-semibold text-sm uppercase tracking-wider text-lusso-sage">
+              Síguenos
+            </h4>
+            <div className="mt-4 flex gap-4">
+              {/* Instagram */}
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-lusso-cream/70 hover:text-lusso-sage transition-colors"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              {/* WhatsApp */}
+              <a
+                href={`https://wa.me/${WHATSAPP}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="text-lusso-cream/70 hover:text-lusso-sage transition-colors"
+              >
+                <MessageCircle size={20} />
+              </a>
+            </div>
           </div>
         </div>
 

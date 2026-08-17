@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+public/images_backup/ 
+optimizar-imagenes.mjs 
+convertir-johnny.mjs 
