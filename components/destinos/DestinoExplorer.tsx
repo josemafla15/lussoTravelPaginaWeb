@@ -40,25 +40,38 @@ export default function DestinoExplorer({ tipo }: Props) {
     );
   }, []);
 
-  // Precarga TODAS las fotos de este tipo (principal + imperdibles) apenas
-  // se monta el componente -- son ~10-20 destinos, fotos ya optimizadas a
-  // menos de 500KB cada una, así que el total es liviano. Usamos las
-  // mismas URLs crudas que <Image unoptimized> va a pedir, para que el
-  // caché del navegador realmente calce (ver por qué en el prop
-  // unoptimized más abajo).
   useEffect(() => {
+  const precargar = () => {
     lista.forEach((d) => {
       const img = new window.Image();
+      img.fetchPriority = "low";
       img.src = d.imagen;
 
       d.imperdibles.slice(0, 3).forEach((imp) => {
         if (imp.imagen) {
           const impImg = new window.Image();
+          impImg.fetchPriority = "low";
           impImg.src = imp.imagen;
         }
       });
     });
-  }, [lista]);
+  };
+
+  const tieneIdleCallback = typeof window.requestIdleCallback === "function";
+
+  if (document.readyState === "complete") {
+    if (tieneIdleCallback) {
+      const id = window.requestIdleCallback(precargar);
+      return () => window.cancelIdleCallback(id);
+    } else {
+      const id = window.setTimeout(precargar, 500);
+      return () => window.clearTimeout(id);
+    }
+  } else {
+    window.addEventListener("load", precargar, { once: true });
+    return () => window.removeEventListener("load", precargar);
+  }
+}, [lista]);
 
   const cambiarDestino = (direccion: 1 | -1) => {
     if (animando) return; // evita clics dobles durante la animación
