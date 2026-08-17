@@ -2,16 +2,16 @@
 
 import { useEffect } from "react";
 import { destinos } from "@/lib/destinos";
+import { experiencias } from "@/lib/experiencias";
 
 /**
- * Precarga en segundo plano las fotos de la página de Destinos, para
- * que cuando el usuario llegue ahí (navegando desde el home) ya estén
- * en caché del navegador. No bloquea nada -- usa fetchPriority "low"
- * y espera a que la página ya haya terminado de cargar antes de
- * empezar, para no competir por ancho de banda con el contenido real
- * del home.
+ * Precarga en segundo plano las fotos de Destinos y Experiencias, para
+ * que cuando el usuario navegue a esas páginas ya estén en caché del
+ * navegador. No bloquea nada -- corre después de que el home terminó
+ * de cargar, con prioridad baja, para no competir por ancho de banda
+ * con el contenido que el usuario está viendo en ese momento.
  */
-export default function PrecargaDestinos() {
+export default function PrecargaImagenes() {
   useEffect(() => {
     const precargar = () => {
       destinos.forEach((d) => {
@@ -25,6 +25,18 @@ export default function PrecargaDestinos() {
             impImg.fetchPriority = "low";
             impImg.src = imp.imagen;
           }
+        });
+      });
+
+      experiencias.forEach((e) => {
+        const img = new window.Image();
+        img.fetchPriority = "low";
+        img.src = e.imagen;
+
+        e.parques.forEach((p) => {
+          const parqueImg = new window.Image();
+          parqueImg.fetchPriority = "low";
+          parqueImg.src = p.imagen;
         });
       });
     };
@@ -45,5 +57,5 @@ export default function PrecargaDestinos() {
     }
   }, []);
 
-  return null; // no renderiza nada, solo dispara el efecto
+  return null;
 }

@@ -5,7 +5,7 @@ import ServiciosDestacados from "@/components/home/ServiciosDestacados";
 import PorQueNosotros from "@/components/home/PorQueNosotros";
 import CtaFinal from "@/components/home/CtaFinal";
 import Resenas from "@/components/home/Resenas";
-import PrecargaDestinos from "@/components/destinos/PrecargaDestinos";
+import PrecargaImagenes from "@/components/destinos/PrecargaImagenes";
 
 export const metadata = {
   title: "Lusso Travel | Agencia de viajes a tu medida",
@@ -16,7 +16,7 @@ export const metadata = {
 export default function Home() {
   return (
     <main>
-      <PrecargaDestinos />
+      <PrecargaImagenes />
       <HeroSection />
       {/* <DestinosDestacados /> */}
       <CtaBanner />
