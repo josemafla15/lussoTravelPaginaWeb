@@ -11,33 +11,43 @@ export default function Navbar() {
   const [destinosOpen, setDestinosOpen] = useState(false);
 
   useEffect(() => {
-    const esDesktop = () => window.matchMedia("(min-width: 768px)").matches;
+  const esDesktop = () => window.matchMedia("(min-width: 768px)").matches;
 
-    if (!esDesktop()) {
-      // En mobile no hacemos nada — visible ya es true por defecto
-      return;
-    }
+  if (!esDesktop()) {
+    // En mobile no hacemos nada — visible ya es true por defecto
+    return;
+  }
 
-    let lastScrollY = window.scrollY;
-    let quietTime = 0;
+  let lastScrollY = window.scrollY;
+  let quietTime = 0;
 
-    const interval = setInterval(() => {
-      const currentScrollY = window.scrollY;
+  const handleMouseMove = () => {
+    setVisible(true);
+    quietTime = 0;
+  };
 
-      if (currentScrollY !== lastScrollY) {
-        setVisible(true);
-        quietTime = 0;
-        lastScrollY = currentScrollY;
-      } else {
-        quietTime += 200;
-        if (quietTime >= 2000 && !mobileOpen && !destinosOpen) {
-          setVisible(false);
-        }
+  window.addEventListener("mousemove", handleMouseMove);
+
+  const interval = setInterval(() => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY !== lastScrollY) {
+      setVisible(true);
+      quietTime = 0;
+      lastScrollY = currentScrollY;
+    } else {
+      quietTime += 200;
+      if (quietTime >= 2000 && !mobileOpen && !destinosOpen) {
+        setVisible(false);
       }
-    }, 200);
+    }
+  }, 200);
 
-    return () => clearInterval(interval);
-  }, [mobileOpen, destinosOpen]);
+  return () => {
+    clearInterval(interval);
+    window.removeEventListener("mousemove", handleMouseMove);
+  };
+}, [mobileOpen, destinosOpen]);
 
   return (
     <header

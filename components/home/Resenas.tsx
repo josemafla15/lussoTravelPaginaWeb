@@ -1,19 +1,39 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { resenas } from "@/lib/resenas";
 import GaleriaResena from "@/components/home/GaleriaResena";
 
+// Reseña que define el "tope" de altura — actualmente la más larga (Jimena, índice 0)
+const RESENA_MAS_LARGA = resenas[0];
+
 export default function Resenas() {
   const [index, setIndex] = useState(0);
   const [animando, setAnimando] = useState(false);
+  const [alturaEstandar, setAlturaEstandar] = useState<number | null>(null);
   const contenidoRef = useRef<HTMLDivElement>(null);
+  const medidorRef = useRef<HTMLDivElement>(null);
 
   const resena = resenas[index];
   const hayVarias = resenas.length > 1;
+
+  // Mide la altura natural de la reseña más larga (invisible, fuera de flujo)
+  // y la usa como altura fija estándar para todas — se recalcula si cambia
+  // el texto o el ancho de pantalla (mobile/desktop).
+  useEffect(() => {
+    const el = medidorRef.current;
+    if (!el) return;
+
+    const medir = () => setAlturaEstandar(el.offsetHeight);
+    medir();
+
+    const observer = new ResizeObserver(medir);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const cambiar = (direccion: 1 | -1) => {
     if (animando || !hayVarias) return;
@@ -50,13 +70,44 @@ export default function Resenas() {
 
   return (
     <section className="bg-lusso-blue py-24">
-      <div className="mx-auto max-w-4xl px-6 text-center">
+      <div className="relative mx-auto max-w-4xl px-6 text-center">
         <h2 className="font-display font-semibold text-3xl text-lusso-charcoal md:text-4xl">
           Lo que dicen nuestros <span className="italic">viajeros</span>
         </h2>
 
+        {/* Medidor invisible — renderiza la reseña más larga fuera de flujo para
+            calcular la altura estándar. No se ve ni ocupa espacio real. */}
+        <div
+          ref={medidorRef}
+          aria-hidden="true"
+          className="pointer-events-none invisible absolute left-0 top-0 -z-10 mt-12 flex w-full max-w-4xl flex-col justify-center px-6"
+        >
+          {RESENA_MAS_LARGA.fotos && RESENA_MAS_LARGA.fotos.length > 0 && (
+            <GaleriaResena fotos={RESENA_MAS_LARGA.fotos} />
+          )}
+          <div className="flex justify-center gap-1">
+            {Array.from({ length: RESENA_MAS_LARGA.calificacion }).map((_, i) => (
+              <Star key={i} size={20} className="fill-lusso-charcoal text-lusso-charcoal" />
+            ))}
+          </div>
+          <blockquote className="mt-6 font-display text-2xl leading-relaxed text-lusso-charcoal md:text-3xl">
+            &quot;{RESENA_MAS_LARGA.texto}&quot;
+          </blockquote>
+          <p className="mt-6 font-semibold text-lusso-charcoal">{RESENA_MAS_LARGA.nombre}</p>
+          <p className="text-sm text-lusso-charcoal/60">
+            Viajó a {RESENA_MAS_LARGA.destino} · {RESENA_MAS_LARGA.fecha}
+          </p>
+          <div className="relative mx-auto mt-6 h-36 w-36 lg:hidden">
+            <Image src={RESENA_MAS_LARGA.asset} alt="" fill className="object-contain" />
+          </div>
+        </div>
+
         {/* Testimonio — desplazamiento horizontal */}
-        <div ref={contenidoRef} className="mt-12 flex min-h-[650px] flex-col justify-center md:min-h-[280px]">
+        <div
+          ref={contenidoRef}
+          className="mt-12 flex flex-col justify-center overflow-hidden"
+          style={alturaEstandar ? { height: alturaEstandar } : undefined}
+        >
           {resena.fotos && resena.fotos.length > 0 && (
             <GaleriaResena fotos={resena.fotos} />
           )}
