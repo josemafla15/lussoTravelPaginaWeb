@@ -50,7 +50,7 @@ export const resenas: Resena[] = [
     fecha: "2026",
     asset: "/images/assets/asset_08.png",
     fotos: [
-      "/images/resenas/marcelaCordobaEuro1.jpeg",
+      "/images/resenas/marcelaCordobaEuro4.jpeg",
       "/images/resenas/marcelaCordobaEuro2.jpeg",
       "/images/resenas/marcelaCordobaEuro3.jpeg",
     ],
@@ -66,7 +66,7 @@ export const resenas: Resena[] = [
     asset: "/images/assets/asset_04.png",
     fotos: [
       "/images/resenas/marcelaCordobaSanAn1.jpeg",
-      "/images/resenas/marcelaCordobaSanAn2.jpeg",
+      "/images/resenas/marcelaCordobaSanAn4.jpeg",
       "/images/resenas/marcelaCordobaSanAn3.jpeg",
     ],
   },

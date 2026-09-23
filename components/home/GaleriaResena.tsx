@@ -17,7 +17,7 @@ export default function GaleriaResena({ fotos }: Props) {
   const anterior = () => setFoto((prev) => (prev - 1 + fotos.length) % fotos.length);
 
   return (
-    <div className="relative mx-auto mb-6 aspect-video w-full max-w-md overflow-hidden rounded-2xl">
+    <div className="relative mx-auto mb-6 aspect-video w-full max-w-md overflow-hidden rounded-2xl lg:max-w-2xl">
       <Image
         key={fotos[foto]}
         src={fotos[foto]}
