@@ -70,4 +70,19 @@ export const resenas: Resena[] = [
       "/images/resenas/marcelaCordobaSanAn3.jpeg",
     ],
   },
+  {
+    id: 5,
+    nombre: "Adriana Moreno",
+    destino: "Coveñas",
+    texto:
+      "Tuve la oportunidad de viajar a Coveñas con Lusso Travel y fue una experiencia excelente. Destaco su organización, atención y acompañamiento en cada momento del viaje. Una agencia muy recomendada para disfrutar con tranquilidad y confianza.",
+    calificacion: 5,
+    fecha: "2026",
+    asset: "/images/assets/asset_08.png",
+    fotos: [
+      "/images/resenas/adrianaMoreno1.jpeg",
+      "/images/resenas/adrianaMoreno2.jpeg",
+      "/images/resenas/adrianaMoreno3.jpeg",
+    ],
+  },
 ];
