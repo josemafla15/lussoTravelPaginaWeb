@@ -18,7 +18,7 @@ export default function Home() {
     <main>
       <PrecargaImagenes />
       <HeroSection />
-      {/* <DestinosDestacados /> */}
+      <DestinosDestacados />
       <CtaBanner />
       <ServiciosDestacados />
       <Resenas />
