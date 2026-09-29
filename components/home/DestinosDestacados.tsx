@@ -5,7 +5,12 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const flyers = [
-  { id: 1, src: "/images/flyers/lusoPromo.jpeg", alt: "Promoción 1" },
+  {
+    id: 1,
+    src: "/images/flyers/pc1.jpeg",          // Escritorio (21:9)
+    srcMobile: "/images/flyers/movil.jpeg", // Celular (16:9)
+    alt: "Promoción destacada Lusso Travel",
+  },
 ];
 
 const AUTOPLAY_MS = 5000;
@@ -17,7 +22,7 @@ export default function DestinosDestacados() {
   const next = () => setCurrent((prev) => (prev + 1) % flyers.length);
   const prev = () => setCurrent((prev) => (prev - 1 + flyers.length) % flyers.length);
 
-  // Autoplay — solo si hay más de un flyer
+  // Autoplay: solo si hay más de un flyer
   useEffect(() => {
     if (!hayVarios) return;
     const timer = setInterval(next, AUTOPLAY_MS);
@@ -34,16 +39,32 @@ export default function DestinosDestacados() {
             className="flex transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${current * 100}%)` }}
           >
-            {flyers.map((flyer) => (
-              <div key={flyer.id} className="relative w-full shrink-0 aspect-[16/9] md:aspect-[21/9]">
+            {flyers.map((flyer, i) => (
+              <div
+                key={flyer.id}
+                className="relative w-full shrink-0 aspect-[16/9] md:aspect-[21/9]"
+              >
+                {/* Versión celular */}
+                <Image
+                  src={flyer.srcMobile}
+                  alt={flyer.alt}
+                  fill
+                  sizes="100vw"
+                  priority={i === 0}
+                  className="object-contain md:hidden"
+                />
+
+                {/* Versión escritorio */}
                 <Image
                   src={flyer.src}
                   alt={flyer.alt}
                   fill
-                  className="object-contain"
+                  sizes="(min-width: 1152px) 1104px, 100vw"
+                  className="hidden object-contain md:block"
                 />
+
                 {/* Botón CTA */}
-                <button className="absolute bottom-6 right-6 z-10 cursor-pointer rounded-full bg-lusso-sage px-6 py-2 text-sm font-semibold text-lusso-charcoal hover:opacity-90 transition-opacity">
+                <button className="absolute bottom-3 right-3 z-10 cursor-pointer rounded-full bg-lusso-sage px-3 py-1 text-xs font-semibold text-lusso-charcoal transition-opacity hover:opacity-90 md:bottom-6 md:right-6 md:px-6 md:py-2 md:text-sm">
                   Quiero saber más
                 </button>
               </div>
@@ -56,7 +77,7 @@ export default function DestinosDestacados() {
               <button
                 onClick={prev}
                 aria-label="Anterior"
-                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-lusso-charcoal hover:bg-white transition-colors"
+                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-lusso-charcoal transition-colors hover:bg-white"
               >
                 <ChevronLeft size={20} />
               </button>
@@ -65,13 +86,13 @@ export default function DestinosDestacados() {
               <button
                 onClick={next}
                 aria-label="Siguiente"
-                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-lusso-charcoal hover:bg-white transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 text-lusso-charcoal transition-colors hover:bg-white"
               >
                 <ChevronRight size={20} />
               </button>
 
               {/* Indicadores (puntos) */}
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+              <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
                 {flyers.map((_, i) => (
                   <button
                     key={i}
