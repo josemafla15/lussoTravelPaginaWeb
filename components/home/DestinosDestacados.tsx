@@ -7,8 +7,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const flyers = [
   {
     id: 1,
-    src: "/images/flyers/pc1.jpeg",          // Escritorio (21:9)
-    srcMobile: "/images/flyers/movil.jpeg", // Celular (16:9)
+    src: "/images/flyers/pc1.jpeg",          // Escritorio
+    srcMobile: "/images/flyers/movil2.png",  // Celular
+    mobileWidth: 900,
+    mobileHeight: 1600,
     alt: "Promoción destacada Lusso Travel",
   },
 ];
@@ -31,9 +33,9 @@ export default function DestinosDestacados() {
 
   return (
     <section className="bg-lusso-cream py-16">
-      <div className="mx-auto max-w-6xl px-6">
-        {/* Carrusel */}
-        <div className="relative overflow-hidden rounded-2xl bg-lusso-charcoal">
+      <div className="mx-auto max-w-6xl px-3 md:px-6">
+        {/* Carrusel: sin esquinas redondeadas y sin fondo */}
+        <div className="relative overflow-hidden bg-transparent">
           {/* Pista de slides */}
           <div
             className="flex transition-transform duration-700 ease-in-out"
@@ -42,16 +44,17 @@ export default function DestinosDestacados() {
             {flyers.map((flyer, i) => (
               <div
                 key={flyer.id}
-                className="relative w-full shrink-0 aspect-[16/9] md:aspect-[21/9]"
+                className="relative w-full shrink-0 md:aspect-[21/9]"
               >
-                {/* Versión celular */}
+                {/* Versión celular: toma su propia proporción */}
                 <Image
                   src={flyer.srcMobile}
                   alt={flyer.alt}
-                  fill
+                  width={flyer.mobileWidth}
+                  height={flyer.mobileHeight}
                   sizes="100vw"
                   priority={i === 0}
-                  className="object-contain md:hidden"
+                  className="block h-auto w-full md:hidden"
                 />
 
                 {/* Versión escritorio */}

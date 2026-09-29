@@ -80,9 +80,9 @@ export const resenas: Resena[] = [
     fecha: "2026",
     asset: "/images/assets/asset_08.png",
     fotos: [
-      "/images/resenas/adrianaMoreno1.jpeg",
-      "/images/resenas/adrianaMoreno2.jpeg",
       "/images/resenas/adrianaMoreno3.jpeg",
+      "/images/resenas/adrianaMoreno2.jpeg",
+      "/images/resenas/adrianaMoreno1.jpeg",
     ],
   },
 ];

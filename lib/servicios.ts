@@ -98,6 +98,33 @@ export const servicios: Servicio[] = [
   imagen: "/images/servicios/amigos.jpg",
   destacado: false,
   },
+  {
+  id: 10,
+  slug: "cruceros",
+  titulo: "Cruceros",
+  descripcion:
+    "Varios destinos en un solo viaje, sin hacer y deshacer maletas. Te ayudamos a elegir la ruta, la naviera y la cabina ideal.",
+  imagen: "/images/servicios/crucero.jpeg",
+  destacado: false,
+},
+{
+  id: 11,
+  slug: "asistencia-medica-internacional",
+  titulo: "Asistencia médica internacional",
+  descripcion:
+    "Viaja protegido ante cualquier imprevisto de salud en el exterior. Te ayudamos a elegir la cobertura según tu destino y tu viaje.",
+  imagen: "/images/servicios/asistenciaMed.jpeg",
+  destacado: false,
+},
+{
+  id: 12,
+  slug: "esim",
+  titulo: "eSIM",
+  descripcion:
+    "Internet desde que aterrizas, sin cambiar tu chip ni pagar roaming. Elegimos contigo el plan de datos según tu destino y tus días de viaje.",
+  imagen: "/images/servicios/eSim.jpg",
+  destacado: false,
+},
 ];
 
 export const serviciosDestacados = servicios.filter((s) => s.destacado);
