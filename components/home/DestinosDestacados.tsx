@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { WHATSAPP } from "@/lib/config";
 
 const flyers = [
   {
@@ -12,6 +13,7 @@ const flyers = [
     mobileWidth: 900,
     mobileHeight: 1600,
     alt: "Promoción destacada Lusso Travel",
+    mensaje: "Hola, quiero saber más sobre la promoción destacada",
   },
 ];
 
@@ -66,10 +68,17 @@ export default function DestinosDestacados() {
                   className="hidden object-contain md:block"
                 />
 
-                {/* Botón CTA */}
-                <button className="absolute bottom-3 right-3 z-10 cursor-pointer rounded-full bg-lusso-sage px-3 py-1 text-xs font-semibold text-lusso-charcoal transition-opacity hover:opacity-90 md:bottom-6 md:right-6 md:px-6 md:py-2 md:text-sm">
+                {/* Botón CTA → WhatsApp */}
+                <a
+                  href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
+                    flyer.mensaje
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-3 right-3 z-10 cursor-pointer rounded-full bg-lusso-sage px-3 py-1 text-xs font-semibold text-lusso-charcoal transition-opacity hover:opacity-90 md:bottom-6 md:right-6 md:px-6 md:py-2 md:text-sm"
+                >
                   Quiero saber más
-                </button>
+                </a>
               </div>
             ))}
           </div>

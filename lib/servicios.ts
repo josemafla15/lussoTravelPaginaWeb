@@ -4,7 +4,8 @@ export type Servicio = {
   titulo: string;
   descripcion: string;
   imagen: string;
-  destacado: boolean; // los 3 que aparecen en el inicio
+  destacado: boolean;
+  sinCotizar?: boolean; // true = no muestra el botón "Cotizar este plan"
 };
 
 export const servicios: Servicio[] = [
@@ -104,7 +105,7 @@ export const servicios: Servicio[] = [
   titulo: "Cruceros",
   descripcion:
     "Varios destinos en un solo viaje, sin hacer y deshacer maletas. Te ayudamos a elegir la ruta, la naviera y la cabina ideal.",
-  imagen: "/images/servicios/crucero.jpeg",
+  imagen: "/images/servicios/crucero.jpg",
   destacado: false,
 },
 {
@@ -115,6 +116,7 @@ export const servicios: Servicio[] = [
     "Viaja protegido ante cualquier imprevisto de salud en el exterior. Te ayudamos a elegir la cobertura según tu destino y tu viaje.",
   imagen: "/images/servicios/asistenciaMed.jpeg",
   destacado: false,
+  sinCotizar: true,
 },
 {
   id: 12,
@@ -124,6 +126,7 @@ export const servicios: Servicio[] = [
     "Internet desde que aterrizas, sin cambiar tu chip ni pagar roaming. Elegimos contigo el plan de datos según tu destino y tus días de viaje.",
   imagen: "/images/servicios/eSim.jpg",
   destacado: false,
+  sinCotizar: true,
 },
 ];
 

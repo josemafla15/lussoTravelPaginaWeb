@@ -21,12 +21,29 @@ export const destinos: Destino[] = [
   // ─────────────────────────────────────────────
   {
     id: 1,
+    slug: "narino",
+    nombre: "Nariño",
+    tipo: "nacional",
+    categorias: ["Cultura"],
+    descripcion:
+      "Nariño es un destino lleno de tradición en el sur de Colombia, y su mayor tesoro es el Carnaval de Negros y Blancos, Patrimonio Cultural Inmaterial de la Humanidad. Cada enero, Pasto se llena de carrozas monumentales, comparsas, música andina y juegos con talco. Además, paisajes como la Laguna de la Cocha y el Santuario de Las Lajas completan una experiencia inolvidable.",
+    imperdibles: [
+      { nombre: "Carnaval de negros y blancos", imagen: "/images/destinosNuevos-webp/narinoCarnaval.webp" },
+      { nombre: "Laguna de la cocha", imagen: "/images/destinosNuevos-webp/narinoLaguna.webp" },
+      { nombre: "Santuario de Las Lajas", imagen: "/images/destinosNuevos-webp/narinoLajas.webp" },
+    ],
+    frase:
+      "Vive la magia del Carnaval de Negros y Blancos y descubra la riqueza cultural de Nariño.",
+    imagen: "/images/destinosNuevos-webp/narino.webp",
+  },
+  {
+    id: 2,
     slug: "santa-marta",
     nombre: "Santa Marta",
     tipo: "nacional",
     categorias: ["Playa", "Aventura"],
     descripcion:
-      "Donde la naturaleza, el mar y la cultura se unen. Puerta de entrada al Tayrona y hogar de la Sierra Nevada.",
+      "Santa Marta es la ciudad más antigua de Colombia y un paraíso donde el mar se encuentra con la montaña. Es la puerta de entrada al Parque Tayrona y a la Sierra Nevada, con playas vírgenes, selva tropical y cultura indígena viva, ideal para combinar descanso, naturaleza y aventura.",
     imperdibles: [
       { nombre: "Parque Tayrona", imagen: "/images/destinos/parque_tayrona.jpg" },
       { nombre: "Centro Histórico", imagen: "/images/destinos/centro_historico.jpg" },
@@ -37,13 +54,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/santa_marta.webp",
   },
   {
-    id: 2,
+    id: 3,
     slug: "san-andres",
     nombre: "San Andrés",
     tipo: "nacional",
     categorias: ["Playa"],
     descripcion:
-      "El paraíso del Mar de los Siete Colores. Arrecifes, playas de arena blanca y excursiones inolvidables.",
+      "San Andrés es el paraíso del Mar de los Siete Colores, una isla caribeña de aguas cristalinas y arena blanca. Sus arrecifes, cayos cercanos y la alegre cultura raizal hacen de este destino el plan perfecto para bucear, relajarse al sol y disfrutar del Caribe colombiano.",
     imperdibles: [
       { nombre: "Johnny Cay", imagen: "/images/destinos/johnny.jpg" },
       { nombre: "Acuario Natural", imagen: "/images/destinos/acuario.jpg" },
@@ -53,13 +70,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/sanAndres.webp",
   },
   {
-    id: 3,
+    id: 4,
     slug: "cartagena",
     nombre: "Cartagena",
     tipo: "nacional",
     categorias: ["Playa", "Cultura"],
     descripcion:
-      "Ciudad Patrimonio de la Humanidad. Historia colonial, playas de Barú y el encanto único del Caribe.",
+      "Cartagena es la joya del Caribe colombiano y Patrimonio de la Humanidad. Su ciudad amurallada, sus calles coloniales llenas de flores y balcones, y la cercanía a islas de aguas turquesas como Barú y el Rosario la convierten en un destino que mezcla historia, cultura y playa.",
     imperdibles: [
       { nombre: "Ciudad Amurallada", imagen: "/images/destinos/ciudadamurallada.jpg" },
       { nombre: "Islas del Rosario", imagen: "/images/destinos/islasRosario.jpg" },
@@ -70,13 +87,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/cartagena.webp",
   },
   {
-    id: 4,
+    id: 5,
     slug: "la-guajira",
     nombre: "La Guajira",
     tipo: "nacional",
     categorias: ["Aventura"],
     descripcion:
-      "Donde el desierto se encuentra con el mar. Playas vírgenes, dunas doradas y la cultura Wayuu.",
+      "La Guajira es el lugar donde el desierto se encuentra con el mar. Dunas doradas, playas vírgenes, atardeceres infinitos y la cultura ancestral del pueblo Wayuu hacen de este rincón del norte de Colombia una aventura auténtica para quienes buscan paisajes únicos.",
     imperdibles: [
       { nombre: "Cabo de la Vela", imagen: "/images/destinos/cabo.jpg" },
       { nombre: "Punta Gallinas", imagen: "/images/destinos/puntagallinas.jpg" },
@@ -87,13 +104,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/guajira.webp",
   },
   {
-    id: 5,
+    id: 6,
     slug: "covenas",
     nombre: "Coveñas",
     tipo: "nacional",
     categorias: ["Playa"],
     descripcion:
-      "Playas tranquilas, mar sereno y las Islas de San Bernardo. El plan perfecto para desconectarse.",
+      "Coveñas es el refugio ideal para desconectarse frente al Caribe. Sus playas tranquilas, su mar sereno y la cercanía a las Islas de San Bernardo, con aguas cristalinas y pueblos pesqueros, lo convierten en el destino perfecto para descansar en familia o en pareja sin prisas.",
     imperdibles: [
       { nombre: "Islas de San Bernardo", imagen: "/images/destinos/sanBernardo.jpg" },
       { nombre: "Atardeceres sobre el Caribe", imagen: "/images/destinos/atardecer.jpg" },
@@ -104,13 +121,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/covenas.webp",
   },
   {
-    id: 6,
+    id: 7,
     slug: "amazonas",
     nombre: "Amazonas",
     tipo: "nacional",
     categorias: ["Aventura"],
     descripcion:
-      "Naturaleza pura, cultura ancestral y el río más grande del mundo. Un viaje que se queda contigo..",
+      "El Amazonas es naturaleza en su estado más puro. Recorrer el río más caudaloso del mundo, adentrarse en la selva, ver delfines rosados y conocer las comunidades indígenas que la habitan hacen de este destino una experiencia que se queda contigo para siempre.",
     imperdibles: [
       { nombre: "Avistamiento de aves", imagen: "/images/destinos/avistamiento.webp" },
       { nombre: "Atardeceres sobre el río amazonas", imagen: "/images/destinos/atardeceresAmazonas.webp" },
@@ -121,20 +138,20 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/amazonas.webp",
   },
   {
-    id: 7,
+    id: 8,
     slug: "eje-cafetero",
     nombre: "Eje cafetero",
     tipo: "nacional",
     categorias: ["Cultura"],
     descripcion:
-      "Naturaleza pura, cultura ancestral y el río más grande del mundo. Un viaje que se queda contigo..",
+      "El Eje Cafetero es el corazón verde de Colombia y Patrimonio de la Humanidad por su paisaje cultural cafetero. Entre montañas, fincas tradicionales y pueblos coloridos como Salento y Filandia, invita a vivir la cultura del café. Su joya es el Valle del Cocora, hogar de la palma de cera, el árbol nacional.",
     imperdibles: [
-      { nombre: "Avistamiento de aves", imagen: "/images/destinosNuevos-webp/ejeCafTermales.webp" },
-      { nombre: "Atardeceres sobre el río amazonas", imagen: "/images/destinosNuevos-webp/ejeCafValle.webp" },
-      { nombre: "Recorridos en lancha", imagen: "/images/destinosNuevos-webp/ejeCafPueblos.webp" },
+      { nombre: "Termales de Santa Rosa de Cabal", imagen: "/images/destinosNuevos-webp/ejeCafTermales.webp" },
+      { nombre: "Valle del cocora", imagen: "/images/destinosNuevos-webp/ejeCafValle.webp" },
+      { nombre: "Pueblos mágicos", imagen: "/images/destinosNuevos-webp/ejeCafPueblos.webp" },
     ],
     frase:
-      "El destino perfecto para quienes buscan aventura y una verdadera conexión con la naturaleza.",
+      "Montañas verdes, aroma a café y pueblos de colores en el corazón de Colombia.",
     imagen: "/images/destinosNuevos-webp/ejeCaf.webp",
   },
 
@@ -142,7 +159,7 @@ export const destinos: Destino[] = [
   // INTERNACIONALES — Latinoamérica y Caribe
   // ─────────────────────────────────────────────
   {
-    id: 8,
+    id: 9,
     slug: "ecuador",
     nombre: "Ecuador",
     tipo: "internacional",
@@ -159,13 +176,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinosNuevos-webp/ecuador.webp",
   },
   {
-    id: 9,
+    id: 10,
     slug: "panama",
     nombre: "Panamá",
     tipo: "internacional",
     categorias: ["Ciudad", "Playa"],
     descripcion:
-      "Donde se unen dos océanos. Ciudad moderna, compras libres de impuestos e islas paradisíacas.",
+      "Panamá es el punto donde se unen dos océanos. Su capital moderna de rascacielos contrasta con el encanto colonial del Casco Antiguo, y a pocas horas esperan las islas paradisíacas de San Blas. Además, sus compras libres de impuestos lo hacen ideal para una escapada completa.",
     imperdibles: [
       { nombre: "Canal de Panamá", imagen: "/images/destinos/canalPanama.jpg" },
       { nombre: "San Blas", imagen: "/images/destinos/sanBlas.jpg" },
@@ -176,7 +193,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/ciudadPanama.webp",
   },
   {
-    id: 10,
+    id: 11,
     slug: "guatemala",
     nombre: "Guatemala",
     tipo: "internacional",
@@ -192,14 +209,47 @@ export const destinos: Destino[] = [
       "Déjese sorprender por Guatemala, tierra de volcanes, tradición maya y color.",
     imagen: "/images/destinosNuevos-webp/guatemala.webp",
   },
+    {
+    id: 12,
+    slug: "peru",
+    nombre: "Perú",
+    tipo: "internacional",
+    categorias: ["Cultura", "Aventura"],
+    descripcion:"Perú combina historia, naturaleza y gastronomía. Es la cuna del Imperio Inca, con Machu Picchu, Cusco y el Valle Sagrado, y su geografía va de la costa a los Andes y la Amazonía. Lima es una de las capitales gastronómicas del mundo, ideal para quienes buscan cultura, aventura y comida.",
+    imperdibles: [
+      { nombre: "Machu Pichu", imagen: "/images/destinosNuevos-webp/peruMachu.webp" },
+      { nombre: "Montaña de los 7 colores", imagen: "/images/destinosNuevos-webp/peruMontana.webp" },
+      { nombre: "Gastronomía increíble", imagen: "/images/destinosNuevos-webp/peruGastronomia.webp" },
+    ],
+    frase:
+      "Descubre la magia inca entre Machu Picchu, los Andes y la mejor gastronomía de Latinoamérica.",
+    imagen: "/images/destinosNuevos-webp/peru.webp",
+  },
+    {
+    id: 13,
+    slug: "bolivia",
+    nombre: "Bolivia",
+    tipo: "internacional",
+    categorias: ["Cultura", "Aventura"],
+    descripcion:
+      "Bolivia es un destino auténtico y lleno de contrastes. Alberga el Salar de Uyuni, el espejo de sal más grande del mundo, y comparte con Perú el mítico lago Titicaca. Ciudades como La Paz y Sucre mezclan tradición indígena y herencia colonial, ideal para viajeros aventureros.",
+    imperdibles: [
+      { nombre: "Salar de Uyuni", imagen: "/images/destinosNuevos-webp/boliviaDesierto.webp" },
+      { nombre: "Lago Titicaca", imagen: "/images/destinosNuevos-webp/boliviaTiticaca.webp" },
+      { nombre: "La Paz", imagen: "/images/destinosNuevos-webp/boliviaPaz.webp" },
+    ],
+    frase:
+      "Camina sobre el cielo en el Salar de Uyuni y déjate sorprender por la magia andina.",
+    imagen: "/images/destinosNuevos-webp/Bolivia.webp",
+  },
   {
-    id: 11,
+    id: 14,
     slug: "ciudad-de-mexico",
     nombre: "Ciudad de México",
     tipo: "internacional",
     categorias: ["Ciudad", "Cultura"],
     descripcion:
-      "Historia, cultura y gastronomía en el corazón de México. De Teotihuacán a la Basílica de Guadalupe.",
+      "Ciudad de México es una de las capitales más vibrantes del mundo. Pirámides como Teotihuacán, un centro histórico lleno de museos y arquitectura colonial, y una gastronomía reconocida mundialmente hacen de esta metrópoli un destino imperdible para los amantes de la historia y la cultura.",
     imperdibles: [
       { nombre: "Teotihuacán", imagen: "/images/destinos/teoti.jpg" },
       { nombre: "Basílica de Guadalupe", imagen: "/images/destinos/basilica.jpg" },
@@ -210,13 +260,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/ciudadmexico.webp",
   },
   {
-    id: 12,
+    id: 15,
     slug: "cancun",
     nombre: "Cancún",
     tipo: "internacional",
     categorias: ["Playa"],
     descripcion:
-      "Arena blanca, aguas turquesas y resorts todo incluido de clase mundial en el Caribe mexicano.",
+      "Cancún es sinónimo de arena blanca, aguas turquesas y resorts todo incluido de clase mundial. Además de sus playas, es la puerta de entrada a la Riviera Maya, con cenotes, islas cercanas y ruinas mayas como Chichén Itzá, ideal para combinar descanso y aventura.",
     imperdibles: [
       { nombre: "Isla Mujeres", imagen: "/images/destinos/islamujeres.jpg" },
       { nombre: "Chichén Itzá", imagen: "/images/destinos/chichen.jpg" },
@@ -227,7 +277,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/cancun.webp",
   },
   {
-    id: 13,
+    id: 16,
     slug: "cuba",
     nombre: "Cuba",
     tipo: "internacional",
@@ -240,11 +290,11 @@ export const destinos: Destino[] = [
       { nombre: "Trinidad", imagen: "/images/destinosNuevos-webp/cubaTrinidad.webp" },
     ],
     frase:
-      "Viaje en el tiempo a Cuba, entre carros clásicos, son cubano y playas de ensueño.",
+      "Déjese llevar por el ritmo de Cuba, entre carros clásicos, música y playas de ensueño.",
     imagen: "/images/destinosNuevos-webp/cuba.webp",
   },
   {
-    id: 14,
+    id: 17,
     slug: "jamaica",
     nombre: "Jamaica",
     tipo: "internacional",
@@ -261,13 +311,47 @@ export const destinos: Destino[] = [
     imagen: "/images/destinosNuevos-webp/jamaica.webp",
   },
   {
-    id: 15,
+    id: 18,
+    slug: "aruba",
+    nombre: "Aruba",
+    tipo: "internacional",
+    categorias: ["Playa"],
+    descripcion:
+      "Aruba es un paraíso caribeño con sol garantizado, brisa constante y algunas de las playas más bellas del mundo. Entre mar turquesa, paisajes desérticos y una gran oferta de hoteles y restaurantes, es perfecta para desconectar.",
+    imperdibles: [
+      { nombre: "Oranjestad", imagen: "/images/destinosNuevos-webp/arubaCiudad.webp" },
+      { nombre: "Eagle beach", imagen: "/images/destinosNuevos-webp/arubaEagle.webp" },
+      { nombre: "Paseo en catamarán", imagen: "/images/destinosNuevos-webp/arubaPaseo.webp" },
+    ],
+    frase:
+      "Sol todo el año, arena blanca y la calidez de la isla más feliz del Caribe.",
+    imagen: "/images/destinosNuevos-webp/aruba.webp",
+  },
+    {
+    id: 19,
+    slug: "curazao",
+    nombre: "Curazao",
+    tipo: "internacional",
+    categorias: ["Playa"],
+    descripcion:
+      "Curazao es una isla caribeña con aguas cristalinas, playas escondidas y una vibrante mezcla cultural. Su capital, Willemstad, es Patrimonio de la Humanidad por sus coloridas fachadas de estilo holandés. Es ideal para bucear, relajarse y disfrutar del Caribe más auténtico.",
+    imperdibles: [
+      { nombre: "Willemstad", imagen: "/images/destinosNuevos-webp/curazaoPueblo.webp" },
+      { nombre: "Playa Kenepa (Grote Knip)", imagen: "/images/destinosNuevos-webp/curazaoIsla.webp" },
+      { nombre: "Snorkel en arrecifes", imagen: "/images/destinosNuevos-webp/curazaoSnorkel.webp" },
+    ],
+    frase:
+      "Colores, mar turquesa y sabor caribeño en la joya holandesa del Caribe.",
+    imagen: "/images/destinosNuevos-webp/curazao.webp",
+  },
+    {
+    id: 20,
     slug: "punta-cana",
     nombre: "Punta Cana",
     tipo: "internacional",
     categorias: ["Playa"],
     descripcion:
-      "El corazón del Caribe dominicano. Resorts de lujo, playas de ensueño y descanso total.",
+      "Punta Cana es el corazón del Caribe dominicano. Kilómetros de playas de arena blanca bordeadas de palmeras, resorts de lujo todo incluido y excursiones a islas paradisíacas como Saona la convierten en el destino ideal para descansar, celebrar en pareja o disfrutar en familia.",
     imperdibles: [
       { nombre: "Playa Bávaro", imagen: "/images/destinos/playabavaro.jpg" },
       { nombre: "Isla Saona", imagen: "/images/destinos/playaSaona.jpg" },
@@ -278,13 +362,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/puntacana.webp",
   },
   {
-    id: 16,
+    id: 21,
     slug: "rio-de-janeiro",
     nombre: "Río de Janeiro",
     tipo: "internacional",
     categorias: ["Playa", "Ciudad", "Cultura"],
     descripcion:
-      "La ciudad más vibrante de Sudamérica. Copacabana, el Cristo Redentor y la energía única de Brasil.",
+      "Río de Janeiro es la ciudad más vibrante de Sudamérica. Entre playas legendarias como Copacabana e Ipanema, el Cristo Redentor vigilando desde lo alto y la energía contagiosa de la samba, este destino brasileño combina naturaleza, cultura y alegría como ningún otro.",
     imperdibles: [
       { nombre: "Cristo Redentor", imagen: "/images/destinos/cristo.jpg" },
       { nombre: "Pan de Azúcar", imagen: "/images/destinos/panazucar.jpg" },
@@ -294,7 +378,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/rio.webp",
   },
   {
-    id: 17,
+    id: 22,
     slug: "argentina",
     nombre: "Argentina",
     tipo: "internacional",
@@ -311,7 +395,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinosNuevos-webp/argentina.webp",
   },
   {
-    id: 18,
+    id: 23,
     slug: "chile",
     nombre: "Chile",
     tipo: "internacional",
@@ -332,7 +416,7 @@ export const destinos: Destino[] = [
   // INTERNACIONALES — Norteamérica
   // ─────────────────────────────────────────────
   {
-    id: 19,
+    id: 24,
     slug: "estados-unidos",
     nombre: "Estados Unidos",
     tipo: "internacional",
@@ -349,7 +433,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinosNuevos-webp/estados.webp",
   },
   {
-    id: 20,
+    id: 25,
     slug: "canada",
     nombre: "Canadá",
     tipo: "internacional",
@@ -370,13 +454,13 @@ export const destinos: Destino[] = [
   // INTERNACIONALES — Europa
   // ─────────────────────────────────────────────
   {
-    id: 21,
+    id: 26,
     slug: "espana",
     nombre: "España",
     tipo: "internacional",
     categorias: ["Cultura", "Ciudad"],
     descripcion:
-      "Historia, arte y una energía única. De la capital madrileña a la vibrante Barcelona.",
+      "España es historia, arte y una energía única. De la elegante Madrid, con sus grandes museos y plazas, a la vibrante Barcelona, con la arquitectura de Gaudí y el Mediterráneo, el país enamora con su gastronomía, sus tapas y una vida nocturna inigualable.",
     imperdibles: [
       { nombre: "Madrid", imagen: "/images/destinos/madrid.webp" },
       { nombre: "Barcelona", imagen: "/images/destinos/barcelona.webp" },
@@ -385,13 +469,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/espana.webp",
   },
   {
-    id: 22,
+    id: 27,
     slug: "portugal",
     nombre: "Portugal",
     tipo: "internacional",
     categorias: ["Cultura", "Ciudad"],
     descripcion:
-      "Encanto costero y tradición. De la colorida Lisboa a la histórica Oporto.",
+      "Portugal combina encanto costero, tradición y calidez. Lisboa enamora con sus tranvías amarillos, y miradores, mientras Oporto seduce con su ribera colorida y sus bodegas de vino. Un destino acogedor, con excelente gastronomía y el sabor del Atlántico.",
     imperdibles: [
       { nombre: "Lisboa", imagen: "/images/destinos/lisboa.webp" },
       { nombre: "Oporto", imagen: "/images/destinos/oporto.webp" },
@@ -400,13 +484,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/portugal2.jpg",
   },
   {
-    id: 23,
+    id: 28,
     slug: "francia",
     nombre: "Francia",
     tipo: "internacional",
     categorias: ["Cultura", "Ciudad"],
     descripcion:
-      "El romance, el arte y la gastronomía en su máxima expresión. De la icónica París a la Riviera Francesa.",
+      "Francia es el romance, el arte y la gastronomía en su máxima expresión. De París, con la Torre Eiffel, el Louvre y sus cafés, a la luminosa Riviera Francesa y sus playas mediterráneas, es un destino que se disfruta con todos los sentidos.",
     imperdibles: [
       { nombre: "París", imagen: "/images/destinos/paris.webp" },
       { nombre: "Niza", imagen: "/images/destinos/niza.webp" },
@@ -415,13 +499,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/francia.webp",
   },
   {
-    id: 24,
+    id: 29,
     slug: "italia",
     nombre: "Italia",
     tipo: "internacional",
     categorias: ["Cultura", "Ciudad"],
     descripcion:
-      "Cuna del arte y la historia. De la eterna Roma a los canales de Venecia.",
+      "Italia es la cuna del arte, la historia y la buena mesa. De la eterna Roma, con el Coliseo y el Vaticano, a los románticos canales de Venecia, cada ciudad es un museo al aire libre acompañado de pasta, helado y el encanto italiano.",
     imperdibles: [
       { nombre: "Roma", imagen: "/images/destinos/roma.webp" },
       { nombre: "Venecia", imagen: "/images/destinos/venecia.webp" },
@@ -430,13 +514,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/italia.webp",
   },
   {
-    id: 25,
+    id: 30,
     slug: "reino-unido",
     nombre: "Reino Unido",
     tipo: "internacional",
     categorias: ["Cultura", "Ciudad"],
     descripcion:
-      "Historia real y modernidad. De la icónica Londres a la escocesa Edimburgo.",
+      "El Reino Unido combina historia real y modernidad. Londres sorprende con el Big Ben, el Palacio de Buckingham y museos de talla mundial, mientras Edimburgo enamora con su castillo, sus calles medievales y los paisajes escoceses. Un destino lleno de tradición y leyendas.",
     imperdibles: [
       { nombre: "Londres", imagen: "/images/destinos/londres.jpg" },
       { nombre: "Edimburgo", imagen: "/images/destinos/edimburgo.webp" },
@@ -445,13 +529,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/reinoUnido2.webp",
   },
   {
-    id: 26,
+    id: 31,
     slug: "paises-bajos",
     nombre: "Países Bajos",
     tipo: "internacional",
     categorias: ["Cultura", "Ciudad"],
     descripcion:
-      "Canales, bicicletas y tulipanes. Ámsterdam la convierte en una experiencia única.",
+      "Los Países Bajos son canales, bicicletas y campos de tulipanes. Ámsterdam enamora con sus casas angostas junto al agua, museos como el de Van Gogh y un ambiente relajado y cosmopolita. Un destino ideal para recorrer sin prisa y descubrir la cultura holandesa.",
     imperdibles: [
       { nombre: "Ámsterdam", imagen: "/images/destinos/amsterdam.webp" },
     ],
@@ -459,13 +543,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/paisesBajos.webp",
   },
   {
-    id: 27,
+    id: 32,
     slug: "alemania",
     nombre: "Alemania",
     tipo: "internacional",
     categorias: ["Cultura", "Ciudad"],
     descripcion:
-      "Historia, cerveza y arquitectura imponente. De la vibrante Berlín a la bávara Múnich.",
+      "Alemania combina historia, cultura y arquitectura imponente. Berlín sorprende con su pasado reciente, su arte urbano y su ambiente moderno, mientras Múnich conserva el encanto bávaro, sus cervecerías tradicionales y la cercanía a castillos de cuento. Un destino diverso y fascinante.",
     imperdibles: [
       { nombre: "Berlín", imagen: "/images/destinos/berlin.jpg" },
       { nombre: "Múnich", imagen: "/images/destinos/munich.webp" },
@@ -474,13 +558,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/alemania.webp",
   },
   {
-    id: 28,
+    id: 33,
     slug: "grecia",
     nombre: "Grecia",
     tipo: "internacional",
     categorias: ["Cultura", "Playa"],
     descripcion:
-      "Cuna de la civilización occidental. De la histórica Atenas a la paradisíaca Santorini.",
+      "Grecia es la cuna de la civilización occidental. Atenas guarda tesoros como la Acrópolis y el Partenón, mientras Santorini enamora con sus casas blancas, cúpulas azules y atardeceres sobre el mar Egeo. Un destino que une historia milenaria, islas de ensueño y cocina mediterránea.",
     imperdibles: [
       { nombre: "Atenas", imagen: "/images/destinos/atenas.webp" },
       { nombre: "Santorini", imagen: "/images/destinos/santorini.webp" },
@@ -489,7 +573,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinos/grecia.webp",
   },
   {
-    id: 29,
+    id: 34,
     slug: "noruega",
     nombre: "Noruega",
     tipo: "internacional",
@@ -506,13 +590,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinosNuevos-webp/noruega.webp",
   },
   {
-    id: 30,
+    id: 35,
     slug: "finlandia",
     nombre: "Finlandia",
     tipo: "internacional",
     categorias: ["Cultura", "Aventura"],
     descripcion:
-      "Naturaleza nórdica y auroras boreales. De la moderna Helsinki a la mágica Rovaniemi.",
+      "Finlandia es naturaleza nórdica en estado puro. Helsinki sorprende con su diseño moderno y su vida junto al mar, mientras Rovaniemi, en Laponia, ofrece auroras boreales, paseos en trineo y la aldea oficial de Papá Noel. Un destino mágico, especialmente en invierno.",
     imperdibles: [
       { nombre: "Helsinki", imagen: "/images/destinos/helsinki.webp" },
       { nombre: "Rovaniemi", imagen: "/images/destinos/rovaniemi.webp" },
@@ -525,7 +609,7 @@ export const destinos: Destino[] = [
   // INTERNACIONALES — Medio Oriente y África
   // ─────────────────────────────────────────────
   {
-    id: 31,
+    id: 36,
     slug: "turquia",
     nombre: "Turquía",
     tipo: "internacional",
@@ -542,7 +626,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinosNuevos-webp/turquia.webp",
   },
   {
-    id: 32,
+    id: 37,
     slug: "jordania",
     nombre: "Jordania",
     tipo: "internacional",
@@ -559,7 +643,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinosNuevos-webp/jordania.webp",
   },
   {
-    id: 33,
+    id: 38,
     slug: "egipto",
     nombre: "Egipto",
     tipo: "internacional",
@@ -576,7 +660,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinosNuevos-webp/egipto.webp",
   },
   {
-    id: 34,
+    id: 39,
     slug: "dubai",
     nombre: "Dubái",
     tipo: "internacional",
@@ -593,7 +677,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinosNuevos-webp/dubai.webp",
   },
   {
-    id: 35,
+    id: 40,
     slug: "safari-africa",
     nombre: "Safari en África",
     tipo: "internacional",
@@ -614,7 +698,7 @@ export const destinos: Destino[] = [
   // INTERNACIONALES — Asia
   // ─────────────────────────────────────────────
   {
-    id: 36,
+    id: 41,
     slug: "ruta-de-la-seda",
     nombre: "Ruta de la Seda",
     tipo: "internacional",
@@ -631,7 +715,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinosNuevos-webp/ruta.webp",
   },
   {
-    id: 37,
+    id: 42,
     slug: "china",
     nombre: "China",
     tipo: "internacional",
@@ -648,7 +732,7 @@ export const destinos: Destino[] = [
     imagen: "/images/destinosNuevos-webp/china.webp",
   },
   {
-    id: 38,
+    id: 43,
     slug: "tailandia",
     nombre: "Tailandia",
     tipo: "internacional",
@@ -665,13 +749,13 @@ export const destinos: Destino[] = [
     imagen: "/images/destinosNuevos-webp/tailandia.webp",
   },
   {
-    id: 39,
+    id: 44,
     slug: "japon",
     nombre: "Japón",
     tipo: "internacional",
     categorias: ["Cultura", "Ciudad"],
     descripcion:
-      "Donde la tradición milenaria y la innovación conviven en perfecta armonía. Templos, ciudades vibrantes y paisajes que parecen sacados de una postal.",
+      "Japón es el lugar donde la tradición milenaria y la innovación conviven en perfecta armonía. Los templos y jardines de Kioto, la energía futurista de Tokio y la silueta del Monte Fuji hacen de este destino una experiencia única, llena de cultura y paisajes de postal.",
     imperdibles: [
       { nombre: "Monte Fuji", imagen: "/images/destinos/fuji.jpg" },
       { nombre: "Templos de Kioto", imagen: "/images/destinos/kyoto.jpg" },

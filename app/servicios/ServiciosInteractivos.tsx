@@ -50,13 +50,13 @@ export default function ServiciosInteractivos() {
           <div className="relative min-h-[560px]">
             {/* Mancha decorativa — detrás de la imagen, asomándose en la esquina */}
             <div className="pointer-events-none absolute -right-90 -top-37 z-0 h-[900px] w-[900px]">
-  <Image
-    src="/images/formas/mancha.png"
-    alt=""
-    fill
-    className="object-contain"
-  />
-</div>
+              <Image
+                src="/images/formas/mancha.png"
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
 
             <div className="absolute inset-0 z-10 overflow-hidden rounded-2xl">
               <Image
@@ -76,16 +76,27 @@ export default function ServiciosInteractivos() {
               <p className="mt-3 text-sm text-lusso-charcoal/70">
                 {activo.descripcion}
               </p>
-              <a
-                href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-                  `Hola, me interesa el plan de ${activo.titulo.toLowerCase()}`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-block rounded-full bg-lusso-sage px-6 py-2.5 text-sm font-semibold text-lusso-charcoal hover:opacity-90 transition-opacity"
-              >
-                Cotizar este plan
-              </a>
+              {activo.sinCotizar ? (
+                <div className="mt-5 flex items-center gap-3">
+                  <span className="rounded-full border border-lusso-charcoal/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-lusso-charcoal/70">
+                    Adicionales a tu viaje
+                  </span>
+                  {/* <span className="text-sm text-lusso-charcoal/60">
+                    Lo incluimos en cualquier plan que cotices
+                  </span> */}
+                </div>
+              ) : (
+                <a
+                  href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
+                    `Hola, me interesa el plan de ${activo.titulo.toLowerCase()}`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-block rounded-full bg-lusso-sage px-6 py-2.5 text-sm font-semibold text-lusso-charcoal hover:opacity-90 transition-opacity"
+                >
+                  Cotizar este plan
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -116,16 +127,27 @@ export default function ServiciosInteractivos() {
                   <p className="mt-2 text-sm text-lusso-charcoal/70">
                     {servicio.descripcion}
                   </p>
-                  <a
-                    href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-                      `Hola, me interesa el plan de ${servicio.titulo.toLowerCase()}`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-block rounded-full bg-lusso-sage px-5 py-2 text-sm font-semibold text-lusso-charcoal hover:opacity-90 transition-opacity"
-                  >
-                    Cotizar este plan
-                  </a>
+                  {servicio.sinCotizar ? (
+                    <div className="mt-4 flex flex-col items-start gap-2">
+                      <span className="rounded-full border border-lusso-charcoal/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-lusso-charcoal/70">
+                        Adicionales a tu viaje
+                      </span>
+                      {/* <span className="text-sm text-lusso-charcoal/60">
+                        Lo incluimos en cualquier plan que cotices
+                      </span> */}
+                    </div>
+                  ) : (
+                    <a
+                      href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
+                        `Hola, me interesa el plan de ${servicio.titulo.toLowerCase()}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-block rounded-full bg-lusso-sage px-5 py-2 text-sm font-semibold text-lusso-charcoal hover:opacity-90 transition-opacity"
+                    >
+                      Cotizar este plan
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
