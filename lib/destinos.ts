@@ -240,7 +240,7 @@ export const destinos: Destino[] = [
     ],
     frase:
       "Camina sobre el cielo en el Salar de Uyuni y déjate sorprender por la magia andina.",
-    imagen: "/images/destinosNuevos-webp/Bolivia.webp",
+    imagen: "/images/destinosNuevos-webp/bolivia.webp",
   },
   {
     id: 14,
