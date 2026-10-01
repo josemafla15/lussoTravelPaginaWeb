@@ -15,7 +15,7 @@ export const servicios: Servicio[] = [
     titulo: "Paquetes a tu medida",
     descripcion:
       "Ningún viaje es igual a otro. Diseñamos cada itinerario desde cero, según tu presupuesto, tus fechas y la forma en que quieres vivir tu viaje.",
-    imagen: "/images/servicios/aTuMedida.jpg",
+    imagen: "/images/servicios-webp/aTuMedida.webp",
     destacado: true,
   },
   {
@@ -24,7 +24,7 @@ export const servicios: Servicio[] = [
     titulo: "Luna de miel",
     descripcion:
       "Escapadas románticas diseñadas para dos. Hoteles boutique, cenas privadas y momentos inolvidables.",
-    imagen: "/images/servicios/lunamiel.jpg",
+    imagen: "/images/servicios-webp/lunamiel.webp",
     destacado: true,
   },
   {
@@ -33,7 +33,7 @@ export const servicios: Servicio[] = [
     titulo: "Viajes en familia",
     descripcion:
       "Planes pensados para todas las edades, con actividades, comodidad y seguridad para todo el grupo.",
-    imagen: "/images/servicios/familia.jpg",
+    imagen: "/images/servicios-webp/familia.webp",
     destacado: true,
   },
   {
@@ -42,7 +42,7 @@ export const servicios: Servicio[] = [
   titulo: "Tour por Europa",
   descripcion:
     "Circuitos de 7 a 20+ días por las capitales y rincones más encantadores del continente europeo.",
-  imagen: "/images/servicios/europa.jpg",
+  imagen: "/images/servicios-webp/europa.webp",
   destacado: false,
 },
   {
@@ -51,7 +51,7 @@ export const servicios: Servicio[] = [
     titulo: "Planes para empresa",
     descripcion:
       "Congresos, incentivos y team building con toda la logística resuelta para tu equipo.",
-    imagen: "/images/servicios/empresa.jpg",
+    imagen: "/images/servicios-webp/empresa.webp",
     destacado: false,
   },
   {
@@ -60,7 +60,7 @@ export const servicios: Servicio[] = [
     titulo: "Pasadías",
     descripcion:
       "Escapadas de un día para desconectarte sin salir mucho tiempo de casa. Ideal para planes cortos.",
-    imagen: "/images/servicios/pasadia.jpg",
+    imagen: "/images/servicios-webp/pasadia.webp",
     destacado: false,
   },
   // {
@@ -78,7 +78,7 @@ export const servicios: Servicio[] = [
     titulo: "Aventura",
     descripcion:
       "Senderismo, rafting, ecoturismo y experiencias para quienes viajan buscando adrenalina.",
-    imagen: "/images/servicios/aventura1.jpg",
+    imagen: "/images/servicios-webp/aventura1.webp",
     destacado: false,
   },
   {
@@ -87,7 +87,7 @@ export const servicios: Servicio[] = [
   titulo: "Festivales",
   descripcion:
     "Vive los festivales y eventos más importantes del mundo. Música, cultura y energía en destinos que no querrás perderte.",
-  imagen: "/images/servicios/festivales.jpg",
+  imagen: "/images/servicios-webp/festivales.webp",
   destacado: false,
   },
   {
@@ -96,7 +96,7 @@ export const servicios: Servicio[] = [
   titulo: "Planes para amigos",
   descripcion:
     "Escapadas para disfrutar con tu grupo de amigos. Aventura, playa o ciudad, siempre con la mejor organización.",
-  imagen: "/images/servicios/amigos.jpg",
+  imagen: "/images/servicios-webp/amigos.webp",
   destacado: false,
   },
   {
@@ -105,7 +105,7 @@ export const servicios: Servicio[] = [
   titulo: "Cruceros",
   descripcion:
     "Varios destinos en un solo viaje, sin hacer y deshacer maletas. Te ayudamos a elegir la ruta, la naviera y la cabina ideal.",
-  imagen: "/images/servicios/crucero.jpg",
+  imagen: "/images/servicios-webp/crucero.webp",
   destacado: false,
 },
 {
@@ -114,7 +114,7 @@ export const servicios: Servicio[] = [
   titulo: "Asistencia médica internacional",
   descripcion:
     "Viaja protegido ante cualquier imprevisto de salud en el exterior. Te ayudamos a elegir la cobertura según tu destino y tu viaje.",
-  imagen: "/images/servicios/asistenciaMed.jpeg",
+  imagen: "/images/servicios-webp/asistenciaMed.webp",
   destacado: false,
   sinCotizar: true,
 },
@@ -124,7 +124,7 @@ export const servicios: Servicio[] = [
   titulo: "eSIM",
   descripcion:
     "Internet desde que aterrizas, sin cambiar tu chip ni pagar roaming. Elegimos contigo el plan de datos según tu destino y tus días de viaje.",
-  imagen: "/images/servicios/eSim.jpg",
+  imagen: "/images/servicios-webp/eSim.webp",
   destacado: false,
   sinCotizar: true,
 },
